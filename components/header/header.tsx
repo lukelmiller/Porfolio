@@ -1,14 +1,32 @@
 import type { NextPage } from "next";
 import Styles from "./header.module.scss";
-import { externalLinks, personalInfo } from "../../utils/constants";
+import { externalLinks, personalInfo, routes } from "../../utils/constants";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 interface Props {
-	pageIndex: number;
+	children: any;
 }
 
 export const Header: NextPage<Props> = (props) => {
-	const { pageIndex = 0 } = props;
+	const [headerIndex, setHeaderIndex] = useState(0);
+	const router = useRouter();
+
+	const getHeaderIndex = (pathname: String) => {
+		switch (pathname) {
+			case routes.PROJECTS:
+				return 1;
+			case routes.ME:
+				return 3;
+			default:
+				return 0;
+		}
+	};
+
+	useEffect(() => {
+		setHeaderIndex(getHeaderIndex(router.pathname));
+	}, [router]);
+
 	return (
 		<Fragment>
 			<div className={Styles.emptySpacingBox} />
@@ -16,25 +34,27 @@ export const Header: NextPage<Props> = (props) => {
 				<div className={Styles.headerColumn}>
 					<Link href={{ pathname: "/" }}>
 						<a>
-							<h1 className={Styles.title}>Luke Miller</h1>
+							<h1 className={Styles.title}>
+								{personalInfo.FULL_NAME}
+							</h1>
 						</a>
 					</Link>
 					<div className={Styles.nav}>
 						<ul className={Styles.navList}>
 							<li
 								className={
-									pageIndex == 1
+									headerIndex == 1
 										? Styles.selected
 										: Styles.unselected
 								}
 							>
-								<Link href={{ pathname: "/projects" }}>
+								<Link href={{ pathname: routes.PROJECTS }}>
 									<a>Projects</a>
 								</Link>
 							</li>
 							<li
 								className={
-									pageIndex == 2
+									headerIndex == 2
 										? Styles.selected
 										: Styles.unselected
 								}
@@ -49,12 +69,12 @@ export const Header: NextPage<Props> = (props) => {
 							</li>
 							<li
 								className={
-									pageIndex == 3
+									headerIndex == 3
 										? Styles.selected
 										: Styles.unselected
 								}
 							>
-								<Link href={{ pathname: "/me" }}>
+								<Link href={{ pathname: routes.ME }}>
 									<a>Me</a>
 								</Link>
 							</li>
@@ -63,6 +83,7 @@ export const Header: NextPage<Props> = (props) => {
 				</div>
 				<div className={Styles.headerBottomBorder} />
 			</div>
+			{props.children}
 		</Fragment>
 	);
 };

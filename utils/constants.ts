@@ -1,10 +1,14 @@
 export const personalInfo = {
-	NAME: "Luke Miller",
+	FULL_NAME: "Luke Miller",
+	FIRST_NAME: "Luke",
+	LAST_NAME: "Miller",
 	DEGREE: "Computer Science",
 	SCHOOL: "University of Arkansas",
+	CURRENT_JOB_TITLE: "Front End Design Engineer",
+	CURRENT_JOB_LOCATION: "Visa",
 };
 export const navTitles = {
-	HOME: personalInfo.NAME,
+	HOME: personalInfo.FULL_NAME,
 	PROJECTS: "Projects",
 	GITHUB: "GitHub",
 	ME: "Me",
@@ -29,10 +33,10 @@ export const contacts = {
 };
 export const routes = {
 	HOME: "/",
-	PROJECTS: "/projects/",
-	CONTACT: "/contact-me/",
+	PROJECTS: "/projects",
+	CONTACT: "/contact-me",
 	GITHUB: externalLinks.GITHUB,
-	ME: "/me/",
+	ME: "/me",
 };
 export const welcomePage = {
 	WELCOME_CARD: {

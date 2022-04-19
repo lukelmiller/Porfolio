@@ -59,14 +59,14 @@
 		font-weight: bold;
 		transition-duration: 0.3s;
 	}
-	&:hover:active {
-		margin: auto 40px;
+	:active {
+		margin: auto 5px;
+		transition-duration: 0.3s;
 	}
 }
 .selected {
 	font-size: 1.65rem;
 	font-weight: bold;
-
 	transition-duration: 0.6s;
 	margin: auto 40px;
 }

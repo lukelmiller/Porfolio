@@ -8,9 +8,8 @@
 	border-radius: 15px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	overflow: hidden;
-	transition: 0.7s;
-
 	&:hover {
+		transition: 0.7s;
 		box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 		.cardTitle {
 			font-size: 1.6em;
