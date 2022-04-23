@@ -3,6 +3,8 @@ import Styles from "./projectsPage.module.scss";
 
 interface Props {}
 
-export const ProjectsPage: NextPage<Props> = (props) => {
+const Projects: NextPage<Props> = (props) => {
 	return <div />;
 };
+
+export default Projects;

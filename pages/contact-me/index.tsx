@@ -3,6 +3,7 @@ import Styles from "./mePage.module.scss";
 
 interface Props {}
 
-export const MePage: NextPage<Props> = (props) => {
+const ContactMe: NextPage<Props> = (props) => {
 	return <div />;
 };
+export default ContactMe;
