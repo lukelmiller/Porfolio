@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false
+  swcMinify: false,
+    assetPrefix: "/Portfolio",
+  basePath: "/Portfolio"
 }
 
 module.exports = nextConfig
@@ -17,3 +21,4 @@ module.exports = {
     return config;
   }
 };
+

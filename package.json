@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.2.0",
   "private": true,
-  "homepage": "http://lukelmiller.github.io/portfolio",
+  "homepage": "https://lukelmiller.github.io/Portfolio/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
