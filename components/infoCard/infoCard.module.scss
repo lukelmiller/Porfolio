@@ -9,12 +9,12 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 	&:hover {
-		transition: 0.4s;
+		transition: 0.6s;
 		box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 		.cardTitle {
-			font-size: 1.6em;
-			text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
-			margin: 6px 0;
+			font-size: 1.75em;
+			text-shadow: 0px 7px 6px rgba(0, 0, 0, 0.35);
+			margin: 5px 0;
 		}
 	}
 }
@@ -32,7 +32,7 @@
 	margin: 5px auto;
 }
 .cardTitle {
-	transition: 0.3s;
+	transition: 0.25s;
 	text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
 }
 
