@@ -20,7 +20,7 @@ export const IconCard: NextPage<Props> = (props) => {
 	];
 	const { iconFilename, index, title } = props;
 	return (
-		<div className={`${Styles.iconCard} ${glows[index % 6]}`}>
+		<div className={`${Styles.iconCard} ${glows[index % 2]}`}>
 			<div className={Styles.iconContainer}>
 				<Image
 					alt={`${title} Icon`}

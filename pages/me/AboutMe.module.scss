@@ -5,13 +5,16 @@
 .techContainer {
 	width: 100%;
 	margin: 35px auto;
-	animation: infiniteScroll 100s linear infinite;
+	animation: infiniteScroll 120s linear infinite;
 }
 .techRow {
 	height: 150px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+}
+.bottomRow {
+	margin-left: -210px;
 }
 
 @keyframes infiniteScroll {

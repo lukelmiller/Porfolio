@@ -6,11 +6,8 @@
 	height: 120px;
 	display: grid;
 	grid-template-rows: auto 40px;
-	max-width: 120px;
-	position: relative;
 	overflow: hidden;
 	transition: 0.6s;
-
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	&:hover {
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -22,7 +19,7 @@
 	height: 50px;
 }
 .iconImage {
-	position: static;
+	position: relative;
 }
 .iconTitle {
 	text-align: center;
@@ -31,80 +28,44 @@
 	justify-self: center;
 }
 
-// Red
-.glow1 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(255, 49, 49, 0.9);
-	}
-}
-// Orange
-.glow2 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(255, 95, 31, 0.8);
-	}
-}
-//Yellow
-.glow3 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(255, 240, 31, 0.5);
-	}
-}
-//Green
-.glow4 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(15, 255, 80, 0.5);
-	}
-}
-//Blue
-.glow5 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(31, 81, 255, 0.95);
-	}
-}
-//Violet
-.glow6 {
-	&:hover {
-		box-shadow: 0 12px 24px 0 rgba(176, 38, 255, 0.95);
-	}
-}
 @media (prefers-color-scheme: dark) {
 	.iconCard {
 		border: 1px solid var(--text);
 	}
-	// Red
+	// // Red
 	.glow1 {
 		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(255, 49, 49, 0.9);
+			box-shadow: 0 12px 24px 0 rgba(255, 49, 49, 0.9);
 		}
 	}
-	// Orange
+	// // Orange
+	// .glow2 {
+	// 	&:hover {
+	// 		box-shadow: 0 12px 44px 0 rgba(255, 95, 31, 0.8);
+	// 	}
+	// }
+	// //Yellow
+	// .glow3 {
+	// 	&:hover {
+	// 		box-shadow: 0 12px 44px 0 rgba(255, 240, 31, 0.5);
+	// 	}
+	// }
+	// //Green
+	// .glow4 {
+	// 	&:hover {
+	// 		box-shadow: 0 12px 44px 0 rgba(15, 255, 80, 0.5);
+	// 	}
+	// }
+	//Blue
 	.glow2 {
 		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(255, 95, 31, 0.8);
+			box-shadow: 0 12px 24px 0 rgba(31, 81, 255, 0.9);
 		}
 	}
-	//Yellow
-	.glow3 {
-		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(255, 240, 31, 0.5);
-		}
-	}
-	//Green
-	.glow4 {
-		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(15, 255, 80, 0.5);
-		}
-	}
-	//Blue
-	.glow5 {
-		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(31, 81, 255, 0.95);
-		}
-	}
-	//Violet
-	.glow6 {
-		&:hover {
-			box-shadow: 0 12px 44px 0 rgba(176, 38, 255, 0.95);
-		}
-	}
+	// //Violet
+	// .glow6 {
+	// 	&:hover {
+	// 		box-shadow: 0 12px 44px 0 rgba(176, 38, 255, 0.95);
+	// 	}
+	// }
 }

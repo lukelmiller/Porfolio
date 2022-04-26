@@ -35,10 +35,7 @@ const AboutMe: NextPage<Props> = (props) => {
 						{tech}
 						{tech}
 					</div>
-					<div
-						className={Styles.techRow}
-						style={{ marginLeft: "-210px" }}
-					>
+					<div className={`${Styles.techRow} ${Styles.bottomRow}`}>
 						{techReverse}
 						{techReverse}
 					</div>
