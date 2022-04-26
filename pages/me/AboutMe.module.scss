@@ -1,0 +1,27 @@
+.techContainerContainer {
+	position: relative;
+	overflow: hidden;
+}
+.techContainer {
+	width: 100%;
+	margin: 35px auto;
+	animation: infiniteScroll 120s linear infinite;
+}
+.techRow {
+	height: 150px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+.bottomRow {
+	margin-left: -210px;
+}
+
+@keyframes infiniteScroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-4620px);
+	}
+}
