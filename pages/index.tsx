@@ -9,7 +9,6 @@ import Styles from "./index.module.scss";
 const Home: NextPage = () => {
 	return (
 		<Fragment>
-			{/* <Header /> */}
 			<div className={Styles.homeBody}>
 				<div className="column">
 					<div className="row">

@@ -3,6 +3,7 @@
 	--text: black;
 	--primary: red;
 	--secondary: blue;
+	--card-border-radius: 15px;
 }
 
 html,
@@ -32,15 +33,6 @@ dir {
 	margin: 0;
 	padding: 0;
 }
-#__next {
-	height: 100%;
-}
-.welcome_svg__main-stop {
-	stop-color: red;
-}
-.welcome_svg__alt-stop {
-	stop-color: blue;
-}
 
 .row {
 	display: flex;
@@ -60,6 +52,17 @@ dir {
 	margin: auto;
 	align-items: center;
 	justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {

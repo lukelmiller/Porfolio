@@ -5,7 +5,7 @@
 	width: 45vw;
 	min-width: 350px;
 	max-width: 600px;
-	border-radius: 15px;
+	border-radius: var(--card-border-radius);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 	&:hover {

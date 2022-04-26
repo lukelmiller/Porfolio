@@ -6,6 +6,7 @@ const nextConfig = {
   swcMinify: false,
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  experimental: { images: { layoutRaw: true } },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -19,14 +20,5 @@ const nextConfig = {
 module.exports = nextConfig
 
 
-// module.exports = {
-//   webpack(config) {
-//     config.module.rules.push({
-//       test: /\.svg$/,
-//       use: ["@svgr/webpack"]
-//     });
 
-//     return config;
-//   }
-// };
 
