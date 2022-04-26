@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { ReactChild, ReactFragment, useEffect } from "react";
 import TechData from "../../assets/technologies.json";
 import IconCard from "../../components/iconCard";
 import Styles from "./AboutMe.module.scss";

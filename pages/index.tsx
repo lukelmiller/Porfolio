@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { Fragment } from "react";
-import Header from "../components/header";
 import InfoCard from "../components/infoCard";
 import { welcomePage } from "../utils/constants";
 import Icons from "../utils/icons";
