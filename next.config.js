@@ -7,6 +7,10 @@ const nextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   experimental: { images: { layoutRaw: true } },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
