@@ -65,10 +65,24 @@ p {
 	padding: 0;
 }
 
+button {
+	border-color: transparent;
+	// background-color: var(--text);
+	// color: var(--background);
+	border-radius: 8px;
+}
+.pause_svg__icon-pause,
+.play_svg__icon-play {
+	fill: var(--text);
+}
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background: black;
 		--text: white;
+	}
+	button {
+		background-color: #35363a;
 	}
 }
 
