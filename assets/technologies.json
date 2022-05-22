@@ -1,134 +1,212 @@
 [
 	{
 		"name": "Android",
-		"icon": "androidstudio.svg"
+		"icon": "androidstudio.svg",
+		"iconGradient": "androidstudio-plain.svg"
 	},
 	{
 		"name": "Atom",
-		"icon": "atom.svg"
+		"icon": "atom.svg",
+		"iconGradient": "atom-plain.svg"
+	},
+	{
+		"name": "Bash",
+		"icon": "bash.svg",
+		"iconGradient": "bash-plain.svg"
 	},
 	{
 		"name": "Bitbucket",
-		"icon": "bitbucket.svg"
+		"icon": "bitbucket.svg",
+		"iconGradient": "bitbucket-plain.svg"
 	},
 	{
 		"name": "Chrome",
-		"icon": "chrome.svg"
+		"icon": "chrome.svg",
+		"iconGradient": "chrome-plain.svg"
 	},
 	{
 		"name": "C++",
-		"icon": "cplusplus.svg"
+		"icon": "cplusplus.svg",
+		"iconGradient": "cplusplus-plain.svg"
 	},
 	{
 		"name": "C#",
-		"icon": "csharp.svg"
+		"icon": "csharp.svg",
+		"iconGradient": "csharp-plain.svg"
 	},
 	{
 		"name": "CSS",
-		"icon": "css.svg"
+		"icon": "css.svg",
+		"iconGradient": "css-plain.svg"
 	},
 	{
 		"name": "Dart",
-		"icon": "dart.svg"
+		"icon": "dart.svg",
+		"iconGradient": "dart-plain.svg"
+	},
+	{
+		"name": "Docker",
+		"icon": "docker.svg",
+		"iconGradient": "docker-plain.svg"
+	},
+	{
+		"name": "Eslint",
+		"icon": "eslint.svg",
+		"iconGradient": "eslint-plain.svg"
 	},
 	{
 		"name": "Figma",
-		"icon": "figma.svg"
+		"icon": "figma.svg",
+		"iconGradient": "figma-plain.svg"
+	},
+	{
+		"name": "FileZilla",
+		"icon": "filezilla.svg",
+		"iconGradient": "filezilla-plain.svg"
 	},
 	{
 		"name": "Flutter",
-		"icon": "flutter.svg"
+		"icon": "flutter.svg",
+		"iconGradient": "flutter-plain.svg"
 	},
 	{
 		"name": "Git",
-		"icon": "git.svg"
+		"icon": "git.svg",
+		"iconGradient": "git-plain.svg"
 	},
 	{
 		"name": "GitHub",
-		"icon": "github.svg"
+		"icon": "github.svg",
+		"iconGradient": "github-plain.svg"
+	},
+	{
+		"name": "Gradle",
+		"icon": "gradle.svg",
+		"iconGradient": "gradle-plain.svg"
+	},
+	{
+		"name": "Heroku",
+		"icon": "heroku.svg",
+		"iconGradient": "heroku-plain.svg"
 	},
 	{
 		"name": "HTML",
-		"icon": "html.svg"
+		"icon": "html.svg",
+		"iconGradient": "html-plain.svg"
 	},
 	{
 		"name": "JavaScript",
-		"icon": "javascript.svg"
+		"icon": "javascript.svg",
+		"iconGradient": "javascript-plain.svg"
 	},
 	{
 		"name": "Jest",
-		"icon": "jest.svg"
+		"icon": "jest.svg",
+		"iconGradient": "jest-plain.svg"
+	},
+	{
+		"name": "Jira",
+		"icon": "jira.svg",
+		"iconGradient": "jira-plain.svg"
+	},
+	{
+		"name": "LaTeX",
+		"icon": "latex.svg",
+		"iconGradient": "latex-plain.svg"
 	},
 	{
 		"name": "MySQL",
-		"icon": "mysql.svg"
+		"icon": "mysql.svg",
+		"iconGradient": "mysql-plain.svg"
 	},
 	{
 		"name": "Next.js",
-		"icon": "nextjs.svg"
+		"icon": "nextjs.svg",
+		"iconGradient": "nextjs-plain.svg"
 	},
 	{
 		"name": "Node.js",
-		"icon": "nodejs.svg"
+		"icon": "nodejs.svg",
+		"iconGradient": "nodejs-plain.svg"
 	},
 	{
 		"name": "npm",
-		"icon": "npm.svg"
+		"icon": "npm.svg",
+		"iconGradient": "npm-plain.svg"
 	},
 	{
 		"name": "OpenGL",
-		"icon": "opengl.svg"
+		"icon": "opengl.svg",
+		"iconGradient": "opengl-plain.svg"
 	},
 	{
 		"name": "Photoshop",
-		"icon": "photoshop.svg"
+		"icon": "photoshop.svg",
+		"iconGradient": "photoshop-plain.svg"
 	},
 	{
 		"name": "Premiere",
-		"icon": "premierepro.svg"
+		"icon": "premierepro.svg",
+		"iconGradient": "premierepro-plain.svg"
 	},
 	{
 		"name": "Python",
-		"icon": "python.svg"
+		"icon": "python.svg",
+		"iconGradient": "python-plain.svg"
 	},
 	{
 		"name": "Raspberry Pi",
-		"icon": "raspberrypi.svg"
+		"icon": "raspberrypi.svg",
+		"iconGradient": "raspberrypi-plain.svg"
 	},
 	{
 		"name": "React",
-		"icon": "react.svg"
+		"icon": "react.svg",
+		"iconGradient": "react-plain.svg"
 	},
 	{
 		"name": "Safari",
-		"icon": "safari.svg"
+		"icon": "safari.svg",
+		"iconGradient": "safari-plain.svg"
 	},
 	{
 		"name": "Sass",
-		"icon": "sass.svg"
+		"icon": "sass.svg",
+		"iconGradient": "sass-plain.svg"
 	},
 	{
 		"name": "Sourcetree",
-		"icon": "sourcetree.svg"
+		"icon": "sourcetree.svg",
+		"iconGradient": "sourcetree-plain.svg"
 	},
 	{
 		"name": "SQLite",
-		"icon": "sqlite.svg"
+		"icon": "sqlite.svg",
+		"iconGradient": "sqlite-plain.svg"
 	},
 	{
 		"name": "Trello",
-		"icon": "trello.svg"
+		"icon": "trello.svg",
+		"iconGradient": "trello-plain.svg"
 	},
 	{
 		"name": "TypeScript",
-		"icon": "typescript.svg"
+		"icon": "typescript.svg",
+		"iconGradient": "typescript-plain.svg"
 	},
 	{
 		"name": "VS Code",
-		"icon": "vscode.svg"
+		"icon": "vscode.svg",
+		"iconGradient": "vscode-plain.svg"
 	},
 	{
 		"name": "Xcode",
-		"icon": "xcode.svg"
+		"icon": "xcode.svg",
+		"iconGradient": "xcode-plain.svg"
+	},
+	{
+		"name": "Yarn",
+		"icon": "yarn.svg",
+		"iconGradient": "yarn-plain.svg"
 	}
 ]

@@ -15,11 +15,7 @@ export const InfoCard: NextPage<Props> = (props) => {
 	return (
 		<Link href={{ pathname: link.toString() }}>
 			<a>
-				<div
-					className={`${Styles.card} ${
-						prefix && Styles.cardPrefixSplit
-					} ${className}`}
-				>
+				<div className={`${Styles.card} ${className}`}>
 					{prefix && <div className={Styles.cardIcon}>{prefix}</div>}
 
 					<div className={Styles.cardText}>
