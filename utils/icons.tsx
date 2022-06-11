@@ -5,6 +5,7 @@ import OliveGardenIcon from "../assets/olive-garden.svg";
 import PauseIcon from "../assets/pause.svg";
 import PlayIcon from "../assets/play.svg";
 import ProfileIcon from "../assets/profile.svg";
+import Otc from "../assets/otc.svg";
 import StarbucksIcon from "../assets/starbucks.svg";
 import SunIcon from "../assets/welcome.svg";
 import VisaIcon from "../assets/visa.svg";
@@ -17,6 +18,7 @@ const icons = {
 	MAIL: <MailIcon />,
 	MARKET_TECH: <MarketTechIcon />,
 	OLIVE_GARDEN: <OliveGardenIcon />,
+	OTC: <Otc />,
 	PAUSE: <PauseIcon />,
 	PLAY: <PlayIcon />,
 	PROFILE: <ProfileIcon />,

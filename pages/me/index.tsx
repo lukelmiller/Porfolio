@@ -6,7 +6,7 @@ import Styles from "./AboutMe.module.scss";
 import classNames from "classnames";
 import Icons from "../../utils/icons";
 import InfoCard from "../../components/infoCard";
-import OtcIcon from "../../assets/otc.png";
+
 import Photo from "../../assets/photo.png";
 
 import Image from "next/image";
@@ -87,14 +87,7 @@ const AboutMe: NextPage<Props> = (props) => {
 						/>
 						<InfoCard
 							title="Ozark Technical Community College"
-							prefix={
-								<Image
-									src={OtcIcon}
-									alt="OTC Logo"
-									width="110px"
-									height="110px"
-								/>
-							}
+							prefix={Icons.OTC}
 							body="Computer Information Science Certification (CIS)"
 						/>
 					</div>
