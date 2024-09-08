@@ -1,0 +1,161 @@
+[
+	{
+		"icon": "androidstudio",
+		"name": "Android"
+	},
+	{
+		"favorite": true,
+		"icon": "angular",
+		"name": "Angular"
+	},
+	{
+		"icon": "bash",
+		"name": "Bash"
+	},
+	{
+		"icon": "bitbucket",
+		"name": "Bitbucket"
+	},
+	{
+		"icon": "cplusplus",
+		"name": "C++"
+	},
+	{
+		"icon": "csharp",
+		"name": "C#"
+	},
+	{
+		"favorite": true,
+		"icon": "css",
+		"name": "CSS"
+	},
+	{
+		"icon": "dart",
+		"name": "Dart"
+	},
+	{
+		"icon": "eslint",
+		"name": "Eslint"
+	},
+	{
+		"icon": "figma",
+		"name": "Figma"
+	},
+	{
+		"icon": "flutter",
+		"name": "Flutter"
+	},
+	{
+		"favorite": true,
+		"icon": "git",
+		"name": "Git"
+	},
+	{
+		"favorite": true,
+		"icon": "github",
+		"name": "GitHub"
+	},
+	{
+		"favorite": true,
+		"icon": "html",
+		"name": "HTML"
+	},
+	{
+		"icon": "javascript",
+		"name": "JavaScript"
+	},
+	{
+		"icon": "jest",
+		"name": "Jest"
+	},
+	{
+		"icon": "jira",
+		"name": "Jira"
+	},
+	{
+		"icon": "latex",
+		"name": "LaTeX"
+	},
+	{
+		"icon": "mysql",
+		"name": "MySQL"
+	},
+	{
+		"icon": "nextjs",
+		"name": "Next.js"
+	},
+	{
+		"favorite": true,
+		"icon": "nodejs",
+		"name": "Node.js"
+	},
+	{
+		"icon": "npm",
+		"name": "npm"
+	},
+	{
+		"icon": "opengl",
+		"name": "OpenGL"
+	},
+	{
+		"icon": "photoshop",
+		"name": "Photoshop"
+	},
+	{
+		"favorite": true,
+		"icon": "pnpm",
+		"name": "pnpm"
+	},
+	{
+		"icon": "premierepro",
+		"name": "Premiere"
+	},
+	{
+		"icon": "python",
+		"name": "Python"
+	},
+	{
+		"icon": "raspberrypi",
+		"name": "Raspberry Pi"
+	},
+	{
+		"favorite": true,
+		"icon": "react",
+		"name": "React"
+	},
+	{
+		"favorite": true,
+		"icon": "sass",
+		"name": "Sass"
+	},
+	{
+		"icon": "sourcetree",
+		"name": "Sourcetree"
+	},
+	{
+		"icon": "sqlite",
+		"name": "SQLite"
+	},
+	{
+		"icon": "trello",
+		"name": "Trello"
+	},
+	{
+		"favorite": true,
+		"icon": "typescript",
+		"name": "TypeScript"
+	},
+	{
+		"favorite": true,
+		"icon": "vscode",
+		"name": "VS Code"
+	},
+	{
+		"icon": "xcode",
+		"name": "Xcode"
+	},
+	{
+		"icon": "yarn",
+		"name": "Yarn"
+	}
+]
