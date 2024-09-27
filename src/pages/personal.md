@@ -1,6 +1,6 @@
 ---
-layout: ../layouts/Layout.astro
-title: Luke's personal life
+layout: ../layouts/global.astro
+title: Personal life
 ---
 
 # Personal stuff and things

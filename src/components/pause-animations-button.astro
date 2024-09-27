@@ -1,0 +1,36 @@
+---
+import pauseIcon from "../assets/icons/pause.svg?raw";
+import playIcon from "../assets/icons/play.svg?raw";
+
+---
+
+<l-button><button class="button elevated-hover"><Fragment set:html={pauseIcon} />Pause animations</button></l-button>
+
+<script is:inline define:vars={{ pauseIcon, playIcon }}>
+  // Define the behaviour for our new type of HTML element.
+  class Button extends HTMLElement {
+    connectedCallback() {
+  
+      const button = this.querySelector('button');
+
+      // Each time the button is clicked, update the count.
+      button?.addEventListener('click', ()=> {
+        const prefs = JSON.parse(window.localStorage.getItem("preferences")) || {};
+        let isPaused = prefs.animationsPaused || false;
+
+
+        button.innerHTML = isPaused ? (playIcon + "Play animations") : (pauseIcon + "Pause animations");
+
+        window.localStorage.setItem("preferences", JSON.stringify({...prefs, animationsPaused: !isPaused}));
+
+        isPaused = !isPaused;
+
+        console.log(isPaused);
+      });
+
+    }
+  }
+
+  // Tell the browser to use our Button class for <l-button> elements.
+  customElements.define('l-button', Button);
+</script>

@@ -1,0 +1,81 @@
+---
+import PauseAnimationsButton from "../components/pause-animations-button.astro";
+import logo from "../assets/logo.svg?raw";
+import '../global.css';
+
+type Props = {frontmatter?: Record<string, unknown>;title?: string;};
+
+const { frontmatter, title } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title || frontmatter?.title}</title>
+		
+	</head>
+	<body>
+		<header class="header">
+			<div class="align-center row justify-space-between">
+				<a  href="/">
+					 <Fragment class="logo" set:html={logo} />
+				</a>
+				<a href="/personal">
+					Personal
+				</a>
+			</div>
+		</header>
+		<PauseAnimationsButton/>
+		<!-- <button id="animations-toggle" class="button button-subtle elevated-hover">
+			<Fragment set:html={animtationsPaused ? playIcon :  pauseIcon }/>
+			{animtationsPaused ? "Resume" : "Pause"} animations
+			</button> -->
+		<main id="main">
+			<slot />
+		</main>
+		<footer>
+			<nav>
+				<ul class="justify-center row">
+					<li><a>Github</a></li>
+					<li><a>Portfolio</a></li>
+					<li><a>Resume</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: system-ui, sans-serif;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	.header{
+
+		background-color: var(--primary);
+		padding: 0.5rem 6%;
+		a{
+			color: white;
+		}
+	}
+	.logo{
+		height: 24px;
+		width: 24px;
+	}
+</style>
