@@ -1,13 +1,8 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_24_183)">
-<circle cx="12" cy="12" r="10.5" stroke="black" stroke-width="3"/>
-<path d="M6.58398 13.4956L11.9496 8.09163L17.3151 13.4956L13.3587 17.4804C12.5805 18.2642 11.3187 18.2642 10.5404 17.4804L6.58398 13.4956Z" fill="black"/>
-<ellipse cx="9.29412" cy="10.8211" rx="3.79412" ry="3.82112" fill="black"/>
-<ellipse cx="14.6598" cy="10.8211" rx="3.73992" ry="3.82112" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_24_183">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
+<svg aria-hidden="true" class="icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10.5" stroke="var(--icon-fill, black)" stroke-width="3" />
+    <path
+        d="M6.58398 13.4956L11.9496 8.09163L17.3151 13.4956L13.3587 17.4804C12.5805 18.2642 11.3187 18.2642 10.5404 17.4804L6.58398 13.4956Z"
+        fill="var(--icon-fill, black)" />
+    <ellipse cx="9.29412" cy="10.8211" rx="3.79412" ry="3.82112" fill="var(--icon-fill, black)" />
+    <ellipse cx="14.6598" cy="10.8211" rx="3.73992" ry="3.82112" fill="var(--icon-fill, black)" />
 </svg>

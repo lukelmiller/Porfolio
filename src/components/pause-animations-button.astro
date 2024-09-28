@@ -1,36 +1,49 @@
 ---
 import pauseIcon from "../assets/icons/pause.svg?raw";
 import playIcon from "../assets/icons/play.svg?raw";
-
 ---
 
-<l-button><button class="button elevated-hover"><Fragment set:html={pauseIcon} />Pause animations</button></l-button>
+<l-button
+	><button class="button button-subtle elevated-hover"
+		><Fragment set:html={pauseIcon} />Pause animations</button
+	></l-button
+>
 
 <script is:inline define:vars={{ pauseIcon, playIcon }}>
-  // Define the behaviour for our new type of HTML element.
-  class Button extends HTMLElement {
-    connectedCallback() {
-  
-      const button = this.querySelector('button');
+	// Define the behaviour for our new type of HTML element.
+	class Button extends HTMLElement {
+		connectedCallback() {
+			const body = document.querySelector("body");
+			const button = this.querySelector("button");
+			const prefs =
+				JSON.parse(window.localStorage.getItem("preferences")) || {};
 
-      // Each time the button is clicked, update the count.
-      button?.addEventListener('click', ()=> {
-        const prefs = JSON.parse(window.localStorage.getItem("preferences")) || {};
-        let isPaused = prefs.animationsPaused || false;
+			let isPaused = prefs.animationsPaused || false;
 
+			if (isPaused) body.classList.add("pause-all-animations");
 
-        button.innerHTML = isPaused ? (playIcon + "Play animations") : (pauseIcon + "Pause animations");
+			button.innerHTML = isPaused
+				? playIcon + "Play animations"
+				: pauseIcon + "Pause animations";
 
-        window.localStorage.setItem("preferences", JSON.stringify({...prefs, animationsPaused: !isPaused}));
+			// Each time the button is clicked, update the count.
+			button?.addEventListener("click", () => {
+				isPaused = !isPaused;
 
-        isPaused = !isPaused;
+				button.innerHTML = isPaused
+					? playIcon + "Play animations"
+					: pauseIcon + "Pause animations";
 
-        console.log(isPaused);
-      });
+				body.classList.toggle("pause-all-animations");
 
-    }
-  }
+				window.localStorage.setItem(
+					"preferences",
+					JSON.stringify({ ...prefs, animationsPaused: isPaused })
+				);
+			});
+		}
+	}
 
-  // Tell the browser to use our Button class for <l-button> elements.
-  customElements.define('l-button', Button);
+	// Tell the browser to use our Button class for <l-button> elements.
+	customElements.define("l-button", Button);
 </script>

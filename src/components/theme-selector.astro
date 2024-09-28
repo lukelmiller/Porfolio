@@ -1,0 +1,74 @@
+---
+import dropDownIcon from "../assets/icons/drop-down.svg?raw";
+---
+
+<l-theme-select>
+	<fieldset class="align-center gap-4 justify-center row">
+		<label class="label" for="theme-select">THEME:</label>
+		<div class="button button-subtle">
+			<select class="select" id="theme-select">
+				<option value="autumn">Autumn</option>
+				<option value="spring">Spring</option>
+				<option value="summer">Summer</option>
+				<option value="winter">Winter</option>
+			</select>
+			<Fragment set:html={dropDownIcon} />
+		</div>
+	</fieldset></l-theme-select
+>
+
+<script>
+	const getCurrentSeason = (date: Date) => {
+		const firstDayOfSpring = new Date(date.getFullYear(), 2, 22);
+		const firstDayOfSummer = new Date(date.getFullYear(), 6, 22);
+		const firstDayOfFall = new Date(date.getFullYear(), 8, 22);
+		const firstDayOfWinter = new Date(date.getFullYear(), 11, 22);
+
+		if (date >= firstDayOfWinter) return "winter";
+		if (date >= firstDayOfFall) return "autumn";
+		if (date >= firstDayOfSummer) return "summer";
+		if (date >= firstDayOfSpring) return "spring";
+		return "winter";
+	};
+	class ThemeSelect extends HTMLElement {
+		connectedCallback() {
+			const date = new Date();
+			const currentSeason = getCurrentSeason(date);
+
+			const styleRoot = document.getElementById("global-theme-root")!;
+			const themeSelect = this.querySelector("select")!;
+			const prefs = JSON.parse(
+				window.localStorage.getItem("preferences") || ""
+			);
+
+			let appearence = prefs.appearence || "light";
+			let theme = prefs.theme || currentSeason;
+
+			themeSelect.value = theme;
+
+			styleRoot.setAttribute(
+				"href",
+				`/themes/${theme}-${appearence}.css`
+			);
+
+			// Each time the button is clicked, update the count.
+			themeSelect?.addEventListener("change", (event) => {
+				theme = (event.target as HTMLSelectElement).value;
+
+				styleRoot.setAttribute(
+					"href",
+					`/themes/${theme}-${appearence}.css`
+				);
+
+				window.localStorage.setItem(
+					"preferences",
+					JSON.stringify({
+						...prefs,
+						theme: theme === currentSeason ? undefined : theme,
+					})
+				);
+			});
+		}
+	}
+	customElements.define("l-theme-select", ThemeSelect);
+</script>

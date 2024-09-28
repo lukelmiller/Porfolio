@@ -1,0 +1,44 @@
+---
+import docLargeIcon from "../assets/icons/doc-large.svg?raw";
+---
+
+<style>
+	.resume-card {
+		background-color: var(--surface-secondary);
+		inline-size: fit-content;
+		margin-inline: auto;
+		.button {
+		}
+		.doc-icon-container {
+			block-size: fit-content;
+			border-radius: 50%;
+			inline-size: 8rem;
+			overflow: hidden;
+			.icon {
+				transition: 1s;
+				transform: translateY(50px);
+			}
+		}
+
+		.title {
+			animation: none;
+			border-block-end-width: 0px;
+		}
+		&:hover {
+			.icon {
+				transform: translateY(25px);
+			}
+		}
+	}
+</style>
+<div class="align-center card gap-16 justify-center padding-16 row resume-card">
+	<div class="doc-icon-container">
+		<Fragment set:html={docLargeIcon} />
+	</div>
+	<div>
+		<h2 class="title">Looking for something more official?</h2>
+		<a class="button button-subtle elevated-hover" href="/resume"
+			>View full resume</a
+		>
+	</div>
+</div>

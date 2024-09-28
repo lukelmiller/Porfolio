@@ -8,9 +8,8 @@ interface Props {
 }
 
 const { rating } = Astro.props;
-
 ---
 
-{ rating === 1 && <Fragment aria-label="1 of 3" set:html={oneIcon}/>}
-{ rating === 2 && <Fragment aria-label="2 of 3" set:html={twoIcon}/>}
-{ rating === 3 && <Fragment aria-label="3 of 3" set:html={threeIcon}/>}
+{rating === 1 && <Fragment aria-label="1 of 3 icon" set:html={oneIcon} />}
+{rating === 2 && <Fragment aria-label="2 of 3 icon" set:html={twoIcon} />}
+{rating === 3 && <Fragment aria-label="3 of 3 icon" set:html={threeIcon} />}

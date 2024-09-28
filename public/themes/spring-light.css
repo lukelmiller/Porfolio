@@ -1,0 +1,21 @@
+:root {
+	--action-surface-primary: var(--primary);
+	--focus: #8e51af;
+	--highlight: #d2d449;
+	--icon-fill: var(--text);
+	--link: var(--primary);
+	--hero-gradient: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(160, 228, 160, 1) 80%,
+		rgba(210, 212, 73, 1) 85%,
+		rgba(160, 228, 160, 1) 90%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	--primary: #a0e4a0;
+	--surface-primary: white;
+	--surface-secondary: #ffeded;
+	--surface-tertiary: #fbc5ef;
+	--text: black;
+	--text-light: #555555;
+}

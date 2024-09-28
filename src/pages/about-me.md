@@ -17,16 +17,24 @@ I figured out that I often don't take photos with my phone. I do when I carry a 
 
 #### My cameras
 
+<div class="list-styled">
+
 -   GoPro Hero 7 Silver (Action)
 -   Nikon a50 (DSLR)
 -   Polaroid Now Gen 2 (Instant)
 -   Sony a5000 (Mirrorless)
 
+</div>
+
 ### Lego
+
+<div class="list-styled">
 
 I've always loved Legos, they scratched an itch that's more physical than a puzzle and just as fun.
 
 #### Favorite sets
+
+<div class="list-styled">
 
 -   Droidica
 -   Dune
@@ -40,6 +48,8 @@ Always been a huge movie buff. Here are some of my favorites.
 
 #### Favorite movies
 
+<div class="list-styled">
+
 -   About Time
 -   Captain America: Winter Soldier
 -   Dune
@@ -51,11 +61,15 @@ Always been a huge movie buff. Here are some of my favorites.
 -   Jaws
 -   Star Wars
 
+</div>
+
 ### Gaming
 
 I recently got back into gaming and maybe more interestingly --retro gaming. I've been emulating and buying old consoles I had as a kid.
 
 #### Consoles
+
+<div class="list-styled">
 
 -   GameBoy Advanced SP
 -   Playstation 3
@@ -67,7 +81,11 @@ I recently got back into gaming and maybe more interestingly --retro gaming. I'v
 -   Wii
 -   Xbox Series X
 
+</div>
+
 #### Favorite games
+
+<div class="list-styled">
 
 -   Batman: Arkham Trilogy
 -   GTA V
@@ -81,9 +99,13 @@ I recently got back into gaming and maybe more interestingly --retro gaming. I'v
 -   Simpsons: The Game
 -   Wii Sports / Resort
 
+</div>
+
 ### Smart home automation
 
 I've been doing some fun stuff with my smart home. I try to automate the things I don't want to worry about daily. Here are some of my favorite kind of devices that make my life easier.
+
+<div class="list-styled">
 
 -   Air purifiers
 -   Automatic pet feeder
@@ -95,6 +117,8 @@ I've been doing some fun stuff with my smart home. I try to automate the things 
 -   Smart garage door
 -   Smart lights + motion sensors
 -   Whole home speakers
+
+</div>
 
 ## Passions
 

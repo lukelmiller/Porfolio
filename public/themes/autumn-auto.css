@@ -1,0 +1,13 @@
+:root {
+	--action-surface-primary: var(--primary);
+	--focus: blue;
+	--highlight: rgb(255, 223, 163);
+	--icon-fill: var(--text);
+	--link: var(--primary);
+	--primary: rgb(209, 115, 0);
+	--surface-primary: light-dark(white, black);
+	--surface-secondary: rgb(243, 243, 243);
+	--surface-tertiary: rgb(153, 153, 153);
+	--text: light-dark(black, white);
+	--text-light: light-dark(#555555, #d2d2d2);
+}
