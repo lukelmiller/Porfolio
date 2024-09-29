@@ -10,3 +10,16 @@ export const getCurrentSeason = (date: Date) => {
 	if (date >= firstDayOfSpring) return "spring";
 	return "winter";
 };
+
+export const getPreferences = () =>
+	JSON.parse(window?.localStorage?.getItem("preferences") || "{}");
+
+export const setPreferences = (prefs: Record<string, unknown>) => {
+	window.localStorage.setItem(
+		"preferences",
+		JSON.stringify({
+			...getPreferences(),
+			...prefs,
+		})
+	);
+};

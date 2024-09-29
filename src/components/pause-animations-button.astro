@@ -1,22 +1,23 @@
 ---
-import pauseIcon from "../assets/icons/pause.svg?raw";
-import playIcon from "../assets/icons/play.svg?raw";
+
 ---
 
 <l-button
 	><button class="button button-subtle elevated-hover"
-		><Fragment set:html={pauseIcon} />Pause animations</button
+		>Pause animations</button
 	></l-button
 >
 
-<script is:inline define:vars={{ pauseIcon, playIcon }}>
+<script>
+	import pauseIcon from "../assets/icons/pause.svg?raw";
+	import playIcon from "../assets/icons/play.svg?raw";
+	import { getPreferences, setPreferences } from "../utils";
 	// Define the behaviour for our new type of HTML element.
 	class Button extends HTMLElement {
 		connectedCallback() {
-			const body = document.querySelector("body");
-			const button = this.querySelector("button");
-			const prefs =
-				JSON.parse(window.localStorage.getItem("preferences")) || {};
+			const body = document.querySelector("body")!;
+			const button = this.querySelector("button")!;
+			const prefs = getPreferences();
 
 			let isPaused = prefs.animationsPaused || false;
 
@@ -36,10 +37,7 @@ import playIcon from "../assets/icons/play.svg?raw";
 
 				body.classList.toggle("pause-all-animations");
 
-				window.localStorage.setItem(
-					"preferences",
-					JSON.stringify({ ...prefs, animationsPaused: isPaused })
-				);
+				setPreferences({ animationsPaused: isPaused });
 			});
 		}
 	}

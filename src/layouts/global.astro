@@ -1,12 +1,13 @@
 ---
-import PauseAnimationsButton from "../components/pause-animations-button.astro";
-import logo from "../assets/logo.svg?raw";
-import "../global.css";
-import { urls } from "../constants";
+import docIcon from "../assets/icons/doc-fill.svg?raw";
 import githubIcon from "../assets/icons/github-fill.svg?raw";
 import profileIcon from "../assets/icons/me-fill.svg?raw";
-import docIcon from "../assets/icons/doc-fill.svg?raw";
+import logo from "../assets/logo.svg?raw";
+import AppearenceToggle from "../components/appearence-toggle.astro";
+import PauseAnimationsButton from "../components/pause-animations-button.astro";
 import ThemeSelector from "../components/theme-selector.astro";
+import { urls } from "../constants";
+import "../global.css";
 
 type Props = {
 	frontmatter?: Record<string, unknown>;
@@ -84,6 +85,7 @@ const {
 	!headerOnly && (
 		<div class="align-center flex gap-8 justify-between margin-16">
 			<ThemeSelector />
+			<AppearenceToggle />
 			<PauseAnimationsButton />
 		</div>
 	)
