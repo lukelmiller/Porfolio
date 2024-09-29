@@ -42,6 +42,10 @@ for (let i = 0; i < technologies.length; i++) {
 		inline-size: 1.5rem;
 	}
 
+	.technologies {
+		margin-block-start: 1.5rem;
+	}
+
 	@media only screen and (max-width: 700px) {
 		.legend {
 			align-content: center;
@@ -51,7 +55,7 @@ for (let i = 0; i < technologies.length; i++) {
 	}
 </style>
 
-<ul class="gap-16 justify-evenly list-styleless row wrap" ]}>
+<ul class="gap-16 justify-evenly list-styleless row technologies wrap">
 	{
 		technologiesWithImages.map((tech, index) => {
 			return (
@@ -59,7 +63,7 @@ for (let i = 0; i < technologies.length; i++) {
 					<div class="logo margin-4">
 						<Fragment set:html={tech.logo} />
 					</div>
-					<div class:list={["col", "gap-4"]}>
+					<div class="col gap-4">
 						{tech.name}
 
 						<Rating rating={tech.experience} />

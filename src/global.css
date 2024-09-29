@@ -1,6 +1,7 @@
 /* Globals: */
 :root {
 	--border-radius: 1rem;
+	--transition-time: 0.3s;
 
 	color: var(--text);
 	font-size: 16px;
@@ -14,9 +15,12 @@
 }
 
 a {
+	border-radius: var(--border-radius);
 	color: var(--link);
 	font-weight: bolder;
-	&:focus {
+	transition: var(--transition-time);
+	&:focus,
+	&:focus-within {
 		outline-offset: 4px;
 		outline: 2px solid var(--focus);
 	}
@@ -136,7 +140,7 @@ ul {
 	padding-block: 4px;
 	padding-inline: 6px;
 	text-decoration: none;
-	transition: 0.6s;
+	transition: var(--transition-time);
 
 	svg {
 		block-size: 1rem;
@@ -172,7 +176,8 @@ ul {
 .elevated-hover {
 	transition: 0.6s;
 	&:hover,
-	&:focus {
+	&:focus,
+	&:focus-within {
 		box-shadow: 0 8px 8px -4px var(--surface-tertiary);
 		transform: translateY(-0.1rem);
 	}
