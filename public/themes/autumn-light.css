@@ -1,4 +1,5 @@
 :root {
+	color-scheme: light;
 	--action-surface-primary: var(--primary);
 	--focus: #3c5b66;
 	--highlight: #d7a151;

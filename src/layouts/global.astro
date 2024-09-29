@@ -33,11 +33,7 @@ const {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title || frontmatter?.title}</title>
-		<link
-			id="global-theme-root"
-			href="/themes/autumn-light.css"
-			rel="stylesheet"
-		/></head
+		<link id="global-theme-root" rel="stylesheet" /></head
 	>
 
 	<body>
@@ -83,7 +79,7 @@ const {
 </html>
 {
 	!headerOnly && (
-		<div class="align-center flex gap-8 justify-between margin-16">
+		<div class="align-center flex gap-16 justify-center margin-16">
 			<ThemeSelector />
 			<AppearenceToggle />
 			<PauseAnimationsButton />

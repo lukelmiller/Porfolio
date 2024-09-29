@@ -1,13 +1,22 @@
 :root {
+	color-scheme: dark;
 	--action-surface-primary: var(--primary);
-	--focus: blue;
-	--highlight: rgb(255, 223, 163);
+	--focus: #3c5b66;
+	--highlight: #d7a151;
 	--icon-fill: var(--text);
 	--link: var(--primary);
-	--primary: rgb(209, 115, 0);
-	--surface-primary: light-dark(white, black);
-	--surface-secondary: rgb(243, 243, 243);
-	--surface-tertiary: rgb(153, 153, 153);
-	--text: light-dark(black, white);
-	--text-light: light-dark(#555555, #d2d2d2);
+	--hero-gradient: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(147, 51, 48, 1) 80%,
+		rgba(60, 91, 102, 1) 85%,
+		rgba(147, 51, 48, 1) 90%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	--primary: #933330;
+	--surface-primary: rgb(24, 24, 24);
+	--surface-secondary: #373632;
+	--surface-tertiary: #3c5b66;
+	--text: rgb(255, 255, 255);
+	--text-light: #e1e1e1;
 }

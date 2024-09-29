@@ -4,7 +4,7 @@
 
 <l-appearence-toggle>
 	<button
-		class="align-center button button-subtle col elevated-hover gap-4 justify-center"
+		class="align-center button button-subtle elevated-hover gap-4 justify-center row"
 	>
 	</button></l-appearence-toggle
 >
@@ -31,8 +31,8 @@
 	};
 
 	const appearenceOrder: Appearence[] = prefersDark
-		? ["auto", "dark", "light"]
-		: ["auto", "light", "dark"];
+		? ["auto", "light", "dark"]
+		: ["auto", "dark", "light"];
 
 	class AppearenceToggle extends HTMLElement {
 		connectedCallback() {

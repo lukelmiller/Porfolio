@@ -1,8 +1,8 @@
 :root {
-	color-scheme: light;
+	color-scheme: light dark;
 	--action-surface-primary: #dabcce;
 	--focus: #a2b0e3;
-	--highlight: #dabcce;
+	--highlight: light-dark(#dabcce, #ab136e);
 	--hero-gradient: linear-gradient(
 		90deg,
 		rgba(255, 255, 255, 0) 0%,
@@ -13,10 +13,10 @@
 	);
 	--icon-fill: var(--text);
 	--link: var(--primary);
-	--primary: #6782d5;
-	--surface-primary: white;
-	--surface-secondary: #eef2ff;
+	--primary: light-dark(#6782d5, #3c4c7b);
+	--surface-primary: light-dark(white, rgb(24, 24, 24));
+	--surface-secondary: light-dark(#eef2ff, #3f4045);
 	--surface-tertiary: #4f608b;
-	--text: black;
-	--text-light: #555555;
+	--text: light-dark(black, white);
+	--text-light: light-dark(#555555, #e1e1e1);
 }
