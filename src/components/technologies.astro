@@ -11,9 +11,8 @@ const technologiesWithImages: ((typeof technologies)[0] & { logo: string })[] =
 for (let i = 0; i < technologies.length; i++) {
 	const tech = technologies[i];
 
-	const logo = (
-		await import(/* @vite-ignore */ `/logos/${tech.icon}-themed.svg?raw`)
-	).default;
+	const logo = (await import(`../assets/logos/${tech.icon}-themed.svg?raw`))
+		.default;
 	technologiesWithImages[i] = { ...tech, logo };
 }
 ---

@@ -61,7 +61,10 @@ export const initializeTheme = () => {
 	const theme = prefs.theme || currentSeason;
 
 	if (styleRoot)
-		styleRoot.setAttribute("href", `/themes/${theme}-${appearance}.css`);
+		styleRoot.setAttribute(
+			"href",
+			`/Portfolio/themes/${theme}-${appearance}.css`
+		);
 	if (appearanceToggle)
 		appearanceToggle.innerHTML = appearanceContentMap[appearance];
 	if (themeSelect) (themeSelect as HTMLSelectElement).value = theme;
