@@ -29,7 +29,7 @@
 
     .profile-img { 
         block-size: 196px;
-        border: 8px solid rgba(100%, 100%, 100%, 50%);
+        border: 6px solid color-mix(in srgb, var(--surface-primary) 50%, transparent);
         border-radius: var(--border-radius);
         inline-size: 196px;
         transform: translateY(0);
@@ -102,7 +102,7 @@
 </div>
 
 <div class="flex-1 hero-text">
-<h1> Hi I'm Luke <span class="hand">👋🏻</span></h1>
+<h1> Hi I'm Luke <span aria-hidden="true" class="hand">👋🏻</span></h1>
 
 <blockquote class="badge badge-subtle blockquote">Passionate. Professional. Programmer.</blockquote>
 

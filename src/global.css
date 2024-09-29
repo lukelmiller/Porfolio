@@ -21,6 +21,21 @@ a {
 		outline: 2px solid var(--focus);
 	}
 }
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}
+
+html {
+	font-family: system-ui, sans-serif;
+}
 
 body,
 html {
@@ -171,6 +186,7 @@ ul {
 	color: var(--text-light);
 	font-size: 0.5rem;
 	font-weight: 500;
+	text-transform: uppercase;
 }
 .list-styled {
 	li {

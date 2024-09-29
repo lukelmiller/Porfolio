@@ -14,6 +14,7 @@
 	--icon-fill: var(--text);
 	--link: var(--primary);
 	--primary: light-dark(#6782d5, #3c4c7b);
+	--secondary: var(--highlight);
 	--surface-primary: light-dark(white, rgb(24, 24, 24));
 	--surface-secondary: light-dark(#eef2ff, #3f4045);
 	--surface-tertiary: #4f608b;

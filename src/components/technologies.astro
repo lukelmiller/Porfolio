@@ -10,7 +10,7 @@ const technologiesWithImages: ((typeof technologies)[0] & { logo: string })[] =
 
 for (let i = 0; i < technologies.length; i++) {
 	const tech = technologies[i];
-	const logo = (await import(`/logos/${tech.icon}.svg?raw`)).default;
+	const logo = (await import(`/logos/${tech.icon}-themed.svg?raw`)).default;
 	technologiesWithImages[i] = { ...tech, logo };
 }
 ---
@@ -51,22 +51,11 @@ for (let i = 0; i < technologies.length; i++) {
 	}
 </style>
 
-<ul class:list={["gap-16", "justify-evenly", "list-styleless", "row", "wrap"]}>
+<ul class="gap-16 justify-evenly list-styleless row wrap" ]}>
 	{
 		technologiesWithImages.map((tech, index) => {
 			return (
-				<li
-					class:list={[
-						"align-center",
-						"card",
-						"elevated-hover",
-						"gap-8",
-						"justify-center",
-						"list-styleless",
-						"padding-12",
-						"row",
-					]}
-				>
+				<li class="align-center card elevated-hover gap-8 justify-center list-styleless padding-12 row">
 					<div class="logo margin-4">
 						<Fragment set:html={tech.logo} />
 					</div>

@@ -14,6 +14,7 @@
 	--icon-fill: var(--text);
 	--link: var(--primary);
 	--primary: #6782d5;
+	--secondary: var(--highlight);
 	--surface-primary: white;
 	--surface-secondary: #eef2ff;
 	--surface-tertiary: #4f608b;

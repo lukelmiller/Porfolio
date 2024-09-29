@@ -3,7 +3,7 @@
 ---
 
 <l-button
-	><button class="button button-subtle elevated-hover"
+	><button class="button button-subtle elevated-hover label"
 		>Pause animations</button
 	></l-button
 >
@@ -12,7 +12,10 @@
 	import pauseIcon from "../assets/icons/pause.svg?raw";
 	import playIcon from "../assets/icons/play.svg?raw";
 	import { getPreferences, setPreferences } from "../utils";
-	// Define the behaviour for our new type of HTML element.
+
+	const pauseContent = `${pauseIcon} Pause animations`;
+	const playContent = `${playIcon} Play animations`;
+
 	class Button extends HTMLElement {
 		connectedCallback() {
 			const body = document.querySelector("body")!;
@@ -23,17 +26,12 @@
 
 			if (isPaused) body.classList.add("pause-all-animations");
 
-			button.innerHTML = isPaused
-				? playIcon + "Play animations"
-				: pauseIcon + "Pause animations";
+			button.innerHTML = isPaused ? playContent : pauseContent;
 
-			// Each time the button is clicked, update the count.
 			button?.addEventListener("click", () => {
 				isPaused = !isPaused;
 
-				button.innerHTML = isPaused
-					? playIcon + "Play animations"
-					: pauseIcon + "Pause animations";
+				button.innerHTML = isPaused ? playContent : pauseContent;
 
 				body.classList.toggle("pause-all-animations");
 
@@ -42,6 +40,5 @@
 		}
 	}
 
-	// Tell the browser to use our Button class for <l-button> elements.
 	customElements.define("l-button", Button);
 </script>

@@ -75,48 +75,30 @@ const {
 				</nav>
 			</div>
 		</header>
+
+		{
+			!headerOnly && (
+				<div class="align-center flex gap-16 justify-center margin-16">
+					<PauseAnimationsButton />
+					<AppearenceToggle />
+					<ThemeSelector />
+				</div>
+			)
+		}
+		<main class:list={{ "page-margin": !noMargin, main: true }} id="main">
+			<slot />
+		</main>
+		{
+			!headerOnly && (
+				<footer class="align-center gap-16 justify-center margin-16 row">
+					<span>©{new Date().getFullYear()}</span>
+				</footer>
+			)
+		}
 	</body>
 </html>
-{
-	!headerOnly && (
-		<div class="align-center flex gap-16 justify-center margin-16">
-			<ThemeSelector />
-			<AppearenceToggle />
-			<PauseAnimationsButton />
-		</div>
-	)
-}
-<main class:list={{ "page-margin": !noMargin, main: true }} id="main">
-	<slot />
-</main>
-{
-	!headerOnly && (
-		<footer class="align-center gap-16 justify-center margin-16 row">
-			<span>©{new Date().getFullYear()}</span>
-		</footer>
-	)
-}
 
 <style>
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	html {
-		font-family: system-ui, sans-serif;
-	}
-
-	.height-fit-content {
-		block-size: fit-content;
-	}
-
 	.header {
 		background-color: var(--primary);
 		padding: 0.5rem 6%;
