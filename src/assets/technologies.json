@@ -1,0 +1,177 @@
+[
+	{
+		"experience": 2,
+		"icon": "androidstudio",
+		"name": "Android"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "angular",
+		"name": "Angular"
+	},
+	{
+		"experience": 3,
+		"icon": "bash",
+		"name": "Bash"
+	},
+	{	"experience": 3,
+		"icon": "bitbucket",
+		"name": "Bitbucket"
+	},
+	{
+		"experience": 2,
+		"icon": "cplusplus",
+		"name": "C++"
+	},
+	{
+		"experience": 1,
+		"icon": "csharp",
+		"name": "C#"
+	},
+	{
+			"experience": 3,
+		"favorite": true,
+		"icon": "css",
+		"name": "CSS"
+	},
+	{
+			"experience": 3,
+		"icon": "dart",
+		"name": "Dart"
+	},
+	{
+		"experience": 3,
+		"icon": "figma",
+		"name": "Figma"
+	},
+	{
+		"experience": 3,
+		"icon": "flutter",
+		"name": "Flutter"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "git",
+		"name": "Git"
+	},
+	{
+		"experience": 2,
+		"favorite": true,
+		"icon": "github",
+		"name": "GitHub"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "html",
+		"name": "HTML"
+	},
+	{
+		"experience": 3,
+		"icon": "javascript",
+		"name": "JavaScript"
+	},
+	{
+		"experience": 3,
+		"icon": "jest",
+		"name": "Jest"
+	},
+	{
+		"experience": 3,
+		"icon": "jira",
+		"name": "Jira"
+	},
+	{
+		"experience": 1,
+		"icon": "mysql",
+		"name": "MySQL"
+	},
+	{
+		"experience": 1,
+		"icon": "nextjs",
+		"name": "Next.js"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "nodejs",
+		"name": "Node.js"
+	},
+	{
+		"experience": 3,
+		"icon": "npm",
+		"name": "npm"
+	},
+	{
+		"experience": 1,
+		"icon": "opengl",
+		"name": "OpenGL"
+	},
+	{
+		"experience": 1,
+		"icon": "photoshop",
+		"name": "Photoshop"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "pnpm",
+		"name": "pnpm"
+	},
+	{
+		"experience": 1,
+		"icon": "python",
+		"name": "Python"
+	},
+	{
+			"experience": 2,
+		"icon": "raspberrypi",
+		"name": "Raspberry Pi"
+	},
+	{
+			"experience": 3,
+		"favorite": true,
+		"icon": "react",
+		"name": "React"
+	},
+		{
+		"experience": 3,
+		"icon": "rollup",
+		"name": "Rollup"
+	},
+	{
+			"experience": 3,
+		"favorite": true,
+		"icon": "sass",
+		"name": "Sass"
+	},
+	{
+			"experience": 1,
+		"icon": "sqlite",
+		"name": "SQLite"
+	},
+	{
+			"experience": 3,
+		"favorite": true,
+		"icon": "typescript",
+		"name": "TypeScript"
+	},
+	{
+		"experience": 3,
+		"icon": "vite",
+		"name": "Vite"
+	},
+	{
+		"experience": 3,
+		"favorite": true,
+		"icon": "vscode",
+		"name": "VS Code"
+	},
+	{
+		"experience": 1,
+		"icon": "xcode",
+		"name": "Xcode"
+	}
+]

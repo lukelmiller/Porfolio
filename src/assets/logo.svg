@@ -1,0 +1,26 @@
+<svg width="36" height="36" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad" x1="57" y1="0" x2="57" y2="114" gradientUnits="userSpaceOnUse">
+            <stop offset="0.235" stop-color="var(--primary)" />
+            <stop offset="1" stop-color="var(--secondary)" />
+        </linearGradient>
+
+    </defs>
+    <rect width="114" height="114" rx="57" fill="var(--icon-fill)" />
+    <path
+        d="M54 36C54 32.134 57.134 29 61 29C64.866 29 68 32.134 68 36V79C68 82.866 64.866 86 61 86C57.134 86 54 82.866 54 79V36Z"
+        fill="url(#grad)" />
+    <path
+        d="M71 38.5C71 36.0147 73.0147 34 75.5 34C77.9853 34 80 36.0147 80 38.5V51.5C80 53.9853 77.9853 56 75.5 56C73.0147 56 71 53.9853 71 51.5V38.5Z"
+        fill="url(#grad)" />
+    <path
+        d="M83 36C83 32.134 86.134 29 90 29C93.866 29 97 32.134 97 36V79C97 82.866 93.866 86 90 86C86.134 86 83 82.866 83 79V36Z"
+        fill="url(#grad)" />
+    <path
+        d="M18 36C18 32.134 21.134 29 25 29C28.866 29 32 32.134 32 36V79C32 82.866 28.866 86 25 86C21.134 86 18 82.866 18 79V36Z"
+        fill="url(#grad)" />
+    <path
+        d="M44 72C47.866 72 51 75.134 51 79C51 82.866 47.866 86 44 86H25C21.134 86 18 82.866 18 79C18 75.134 21.134 72 25 72H44Z"
+        fill="url(#grad)" />
+
+</svg>

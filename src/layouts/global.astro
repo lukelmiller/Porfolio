@@ -1,0 +1,144 @@
+---
+import docIcon from "../assets/icons/doc-fill.svg?raw";
+import githubIcon from "../assets/icons/github-fill.svg?raw";
+import profileIcon from "../assets/icons/me-fill.svg?raw";
+import logo from "../assets/logo.svg?raw";
+import AppearanceToggle from "../components/appearance-toggle.astro";
+import PauseAnimationsButton from "../components/pause-animations-button.astro";
+import ThemeSelector from "../components/theme-selector.astro";
+import { urls } from "../constants";
+import "../global.css";
+
+type Props = {
+	frontmatter?: Record<string, unknown>;
+	headerOnly?: boolean;
+	noMargin?: boolean;
+	title?: string;
+};
+
+const {
+	frontmatter,
+	headerOnly = false,
+	noMargin = false,
+	title,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title || frontmatter?.title}</title>
+		<link id="global-theme-root" rel="stylesheet" />
+		<script>
+			import { initializeTheme } from "../utils";
+			initializeTheme();
+		</script>
+	</head>
+
+	<body>
+		<div class="flex justify-center margin-16 skip-to-main">
+			<a href="#main"> Skip to content </a>
+		</div>
+		<header class="header">
+			<div class="align-center row justify-between">
+				<a href="/">
+					<Fragment class="logo" set:html={logo} />
+				</a>
+				<nav>
+					<ul class="gap-8 justify-center row">
+						<li>
+							<a
+								aria-label="about me"
+								href="/about-me"
+								title="About me"
+								><Fragment set:html={profileIcon} /></a
+							>
+						</li>
+						<li>
+							<a aria-label="resume" href="/resume" title="Resume"
+								><Fragment set:html={docIcon} /></a
+							>
+						</li>
+						<li>
+							<a
+								aria-label="Github (opens in new tab)"
+								href={urls.github}
+								rel="noopener noreferrer"
+								target="_blank"
+								title="Github"
+							>
+								<Fragment set:html={githubIcon} />
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		{
+			!headerOnly && (
+				<div class="align-center flex gap-16 justify-center margin-16">
+					<PauseAnimationsButton />
+					<AppearanceToggle />
+					<ThemeSelector />
+				</div>
+			)
+		}
+		<main class:list={{ "page-margin": !noMargin, main: true }} id="main">
+			<slot />
+		</main>
+		{
+			!headerOnly && (
+				<footer class="align-center gap-16 justify-center label margin-16 row">
+					<span>©{new Date().getFullYear()}</span>
+				</footer>
+			)
+		}
+	</body>
+</html>
+
+<style>
+	.header {
+		background-color: var(--primary);
+		padding: 0.5rem 6%;
+		a {
+			color: white;
+			text-decoration: none;
+			svg {
+				--icon-fill: white;
+			}
+		}
+	}
+	.logo {
+		height: 24px;
+		width: 24px;
+	}
+
+	.main {
+		height: 100%;
+	}
+
+	.page-margin {
+		padding-block: 7%;
+		margin-inline: 20%;
+	}
+
+	.skip-to-main {
+		position: absolute;
+		top: -1000%;
+		right: -1000%;
+
+		&:focus-within {
+			position: inherit;
+			height: inherit;
+			width: inherit;
+			top: inherit;
+			right: inherit;
+		}
+	}
+</style>

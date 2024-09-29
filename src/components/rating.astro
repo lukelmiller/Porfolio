@@ -1,0 +1,15 @@
+---
+import oneIcon from "../assets/icons/1-of-3.svg?raw";
+import twoIcon from "../assets/icons/2-of-3.svg?raw";
+import threeIcon from "../assets/icons/3-of-3.svg?raw";
+
+interface Props {
+	rating: 1 | 2 | 3 | number;
+}
+
+const { rating } = Astro.props;
+---
+
+{rating === 1 && <Fragment aria-label="1 of 3 icon" set:html={oneIcon} />}
+{rating === 2 && <Fragment aria-label="2 of 3 icon" set:html={twoIcon} />}
+{rating === 3 && <Fragment aria-label="3 of 3 icon" set:html={threeIcon} />}

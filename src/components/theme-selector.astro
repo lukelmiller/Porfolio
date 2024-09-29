@@ -1,0 +1,50 @@
+---
+import dropDownIcon from "../assets/icons/drop-down.svg?raw";
+---
+
+<l-theme-select>
+	<fieldset class="align-center gap-4 justify-center row">
+		<label class="label" for="theme-select">THEME:</label>
+		<div class="button button-subtle elevated-hover">
+			<select class="select" id="theme-select">
+				<option value="autumn">Autumn</option>
+				<option value="spring">Spring</option>
+				<option value="summer">Summer</option>
+				<option value="winter">Winter</option>
+			</select>
+			<Fragment set:html={dropDownIcon} />
+		</div>
+	</fieldset></l-theme-select
+>
+
+<script>
+	import { getCurrentSeason, getPreferences, setPreferences } from "../utils";
+
+	class ThemeSelect extends HTMLElement {
+		connectedCallback() {
+			const date = new Date();
+			const currentSeason = getCurrentSeason(date);
+
+			const styleRoot = document.getElementById("global-theme-root")!;
+			const themeSelect = this.querySelector("select")!;
+
+			// Each time the button is clicked, update the count.
+			themeSelect?.addEventListener("change", (event) => {
+				const prefs = getPreferences();
+
+				const appearance = prefs.appearance || "auto";
+				const theme = (event.target as HTMLSelectElement).value;
+
+				styleRoot.setAttribute(
+					"href",
+					`/themes/${theme}-${appearance}.css`
+				);
+
+				setPreferences({
+					theme: theme === currentSeason ? undefined : theme,
+				});
+			});
+		}
+	}
+	customElements.define("l-theme-select", ThemeSelect);
+</script>

@@ -1,0 +1,56 @@
+---
+
+---
+
+<l-appearance-toggle>
+	<button
+		class="align-center button button-subtle elevated-hover gap-4 justify-center row"
+		id="appearance-toggle"
+	>
+	</button></l-appearance-toggle
+>
+
+<script>
+	import {
+		appearanceContentMap,
+		appearanceOrder,
+		getCurrentSeason,
+		getPreferences,
+		setPreferences,
+		type Appearance,
+	} from "../utils";
+
+	class AppearanceToggle extends HTMLElement {
+		connectedCallback() {
+			const date = new Date();
+			const currentSeason = getCurrentSeason(date);
+			const prefs = getPreferences();
+
+			const appearanceToggle = this.querySelector("button")!;
+			const styleRoot = document.getElementById("global-theme-root")!;
+
+			let appearance: Appearance = prefs.appearance || "auto";
+			let toggleIndex = appearanceOrder.indexOf(appearance);
+
+			appearanceToggle?.addEventListener("click", () => {
+				const prefs = getPreferences();
+				const theme = prefs.theme || currentSeason;
+
+				toggleIndex = (toggleIndex + 1) % 3;
+				appearance = appearanceOrder[toggleIndex];
+
+				appearanceToggle.innerHTML = appearanceContentMap[appearance];
+
+				styleRoot.setAttribute(
+					"href",
+					`/themes/${theme}-${appearance}.css`
+				);
+
+				setPreferences({
+					appearance,
+				});
+			});
+		}
+	}
+	customElements.define("l-appearance-toggle", AppearanceToggle);
+</script>
