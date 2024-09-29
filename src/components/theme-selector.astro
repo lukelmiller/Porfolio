@@ -27,27 +27,17 @@ import dropDownIcon from "../assets/icons/drop-down.svg?raw";
 
 			const styleRoot = document.getElementById("global-theme-root")!;
 			const themeSelect = this.querySelector("select")!;
-			const prefs = getPreferences();
-
-			let appearence = prefs.appearence || "auto";
-			let theme = prefs.theme || currentSeason;
-
-			themeSelect.value = theme;
-
-			styleRoot.setAttribute(
-				"href",
-				`/themes/${theme}-${appearence}.css`
-			);
 
 			// Each time the button is clicked, update the count.
 			themeSelect?.addEventListener("change", (event) => {
 				const prefs = getPreferences();
-				appearence = prefs.appearence || "auto";
-				theme = (event.target as HTMLSelectElement).value;
+
+				const appearance = prefs.appearance || "auto";
+				const theme = (event.target as HTMLSelectElement).value;
 
 				styleRoot.setAttribute(
 					"href",
-					`/themes/${theme}-${appearence}.css`
+					`/themes/${theme}-${appearance}.css`
 				);
 
 				setPreferences({

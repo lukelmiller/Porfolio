@@ -3,7 +3,7 @@ import docIcon from "../assets/icons/doc-fill.svg?raw";
 import githubIcon from "../assets/icons/github-fill.svg?raw";
 import profileIcon from "../assets/icons/me-fill.svg?raw";
 import logo from "../assets/logo.svg?raw";
-import AppearenceToggle from "../components/appearence-toggle.astro";
+import AppearanceToggle from "../components/appearance-toggle.astro";
 import PauseAnimationsButton from "../components/pause-animations-button.astro";
 import ThemeSelector from "../components/theme-selector.astro";
 import { urls } from "../constants";
@@ -33,8 +33,12 @@ const {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title || frontmatter?.title}</title>
-		<link id="global-theme-root" rel="stylesheet" /></head
-	>
+		<link id="global-theme-root" rel="stylesheet" />
+		<script>
+			import { initializeTheme } from "../utils";
+			initializeTheme();
+		</script>
+	</head>
 
 	<body>
 		<div class="flex justify-center margin-16 skip-to-main">
@@ -62,7 +66,7 @@ const {
 						</li>
 						<li>
 							<a
-								aria-label="Github"
+								aria-label="Github (opens in new tab)"
 								href={urls.github}
 								rel="noopener noreferrer"
 								target="_blank"
@@ -80,7 +84,7 @@ const {
 			!headerOnly && (
 				<div class="align-center flex gap-16 justify-center margin-16">
 					<PauseAnimationsButton />
-					<AppearenceToggle />
+					<AppearanceToggle />
 					<ThemeSelector />
 				</div>
 			)
