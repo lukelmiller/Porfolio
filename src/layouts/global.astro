@@ -46,7 +46,7 @@ const {
 		</div>
 		<header class="header">
 			<div class="align-center row justify-between">
-				<a href="/Portfolio">
+				<a class="elevated-hover" href="/Portfolio">
 					<Fragment class="logo" set:html={logo} />
 				</a>
 				<nav>
@@ -57,14 +57,6 @@ const {
 								href="/Portfolio/about-me"
 								title="About me"
 								><Fragment set:html={profileIcon} /></a
-							>
-						</li>
-						<li>
-							<a
-								aria-label="resume"
-								href="/Portfolio/resume"
-								title="Resume"
-								><Fragment set:html={docIcon} /></a
 							>
 						</li>
 						<li>
@@ -142,6 +134,12 @@ const {
 			width: inherit;
 			top: inherit;
 			right: inherit;
+		}
+	}
+
+	@media only screen and (max-width: 700px) {
+		.page-margin {
+			margin-inline: 8%;
 		}
 	}
 </style>

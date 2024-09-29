@@ -7,19 +7,24 @@ import docLargeIcon from "../assets/icons/doc-large.svg?raw";
 		background-color: var(--surface-secondary);
 		inline-size: fit-content;
 		margin-inline: auto;
-		.button {
-		}
 		.doc-icon-container {
-			block-size: fit-content;
+			aspect-ratio: 1/1;
+			block-size: 128px;
 			border-radius: 50%;
-			inline-size: 8rem;
+			inline-size: 128px;
+			flex-grow: 1;
+			flex-shink: 1;
 			overflow: hidden;
 			.icon {
 				transition: 1s;
 				transform: translateY(50px);
 			}
 		}
-
+		.info-container {
+			flex-basis: 50%;
+			flex-grow: 2;
+			flex-shrink: 1;
+		}
 		.title {
 			animation: none;
 			border-block-end-width: 0px;
@@ -32,11 +37,13 @@ import docLargeIcon from "../assets/icons/doc-large.svg?raw";
 		}
 	}
 </style>
-<div class="align-center card gap-16 justify-center padding-16 row resume-card">
+<div
+	class="align-center card gap-16 justify-center padding-16 row resume-card wrap"
+>
 	<div class="doc-icon-container">
 		<Fragment set:html={docLargeIcon} />
 	</div>
-	<div>
+	<div class="info-container">
 		<h2 class="title">Looking for something more official?</h2>
 		<a class="button button-subtle elevated-hover" href="/Portfolio/resume"
 			>View resume</a
