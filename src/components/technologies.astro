@@ -1,0 +1,99 @@
+---
+import oneOfThreeIcon from "../assets/icons/1-of-3.svg?raw";
+import twoOfThreeIcon from "../assets/icons/2-of-3.svg?raw";
+import threeOfThreeIcon from "../assets/icons/3-of-3.svg?raw";
+import technologies from "../assets/technologies.json";
+import Rating from "./rating.astro";
+
+const technologiesWithImages: ((typeof technologies)[0] & { logo: string })[] =
+	[];
+
+for (let i = 0; i < technologies.length; i++) {
+	const tech = technologies[i];
+
+	const logo = (
+		await import(/* @vite-ignore */ `/logos/${tech.icon}-themed.svg?raw`)
+	).default;
+	technologiesWithImages[i] = { ...tech, logo };
+}
+---
+
+<style>
+	.legend {
+		align-content: center;
+		border: 1px solid var(--text-light);
+		border-radius: var(--border-radius);
+		display: flex;
+		font-size: 0.65rem;
+		inline-size: fit-content;
+		margin-block: 2rem;
+		margin-inline: auto;
+		flex-wrap: wrap;
+		padding-block: 0.5rem;
+		padding-inline: 0.75rem;
+		.icon {
+			margin-block-end: 0.075rem;
+			margin-inline-end: 0.25rem;
+		}
+		dd:not(:last-child) {
+			margin-inline-end: 1rem;
+		}
+	}
+
+	.logo {
+		block-size: 1.5rem;
+		inline-size: 1.5rem;
+	}
+
+	.technologies {
+		margin-block-start: 1.5rem;
+	}
+
+	@media only screen and (max-width: 700px) {
+		.legend {
+			align-content: center;
+			display: grid;
+			grid-template-columns: 1.75rem auto;
+		}
+	}
+</style>
+
+<ul class="gap-16 justify-evenly list-styleless row technologies wrap">
+	{
+		technologiesWithImages.map((tech) => {
+			return (
+				<li class="align-center card elevated-hover gap-8 justify-center list-styleless padding-12 row">
+					<div class="logo margin-4">
+						<Fragment set:html={tech.logo} />
+					</div>
+					<div class="col gap-4">
+						{tech.name}
+
+						<Rating rating={tech.experience} />
+					</div>
+				</li>
+			);
+		})
+	}
+</ul>
+
+<dl class="legend">
+	<dt>
+		<span aria-label="3 of 3 icon"
+			><Fragment set:html={threeOfThreeIcon} /></span
+		>
+	</dt>
+	<dd>Most experience</dd>
+	<dt>
+		<span aria-label="2 of 3 icon"
+			><Fragment set:html={twoOfThreeIcon} /></span
+		>
+	</dt>
+	<dd>Good experience</dd>
+	<dt>
+		<span aria-label="1 of 3 icon"
+			><Fragment set:html={oneOfThreeIcon} /></span
+		>
+	</dt>
+	<dd>Fair/not recent experience</dd>
+</dl>

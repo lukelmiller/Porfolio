@@ -1,0 +1,44 @@
+---
+
+---
+
+<l-button
+	><button class="button button-subtle elevated-hover label"
+		>Pause animations</button
+	></l-button
+>
+
+<script>
+	import pauseIcon from "../assets/icons/pause.svg?raw";
+	import playIcon from "../assets/icons/play.svg?raw";
+	import { getPreferences, setPreferences } from "../utils";
+
+	const pauseContent = `${pauseIcon} Pause animations`;
+	const playContent = `${playIcon} Play animations`;
+
+	class Button extends HTMLElement {
+		connectedCallback() {
+			const body = document.querySelector("body")!;
+			const button = this.querySelector("button")!;
+			const prefs = getPreferences();
+
+			let isPaused = prefs.animationsPaused || false;
+
+			if (isPaused) body.classList.add("pause-all-animations");
+
+			button.innerHTML = isPaused ? playContent : pauseContent;
+
+			button?.addEventListener("click", () => {
+				isPaused = !isPaused;
+
+				button.innerHTML = isPaused ? playContent : pauseContent;
+
+				body.classList.toggle("pause-all-animations");
+
+				setPreferences({ animationsPaused: isPaused });
+			});
+		}
+	}
+
+	customElements.define("l-button", Button);
+</script>

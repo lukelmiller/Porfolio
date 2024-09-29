@@ -1,0 +1,13 @@
+<svg aria-hidden="true" class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="12" cy="12" r="10.5" stroke="var(--icon-fill, black)" stroke-width="3" />
+    <path
+        d="M8 6H14C15.6569 6 17 7.34315 17 9V17C17 17.5523 16.5523 18 16 18H8C7.44772 18 7 17.5523 7 17V7C7 6.44772 7.44772 6 8 6Z"
+        stroke="var(--icon-fill, black)" stroke-width="2" />
+    <rect x="9" y="8" width="6" height="1" rx="0.5" fill="var(--icon-fill, black)" />
+    <rect x="9" y="10" width="6" height="1" rx="0.5" fill="var(--icon-fill, black)" />
+    <rect x="9" y="12" width="6" height="1" rx="0.5" fill="var(--icon-fill, black)" />
+
+
+</svg>

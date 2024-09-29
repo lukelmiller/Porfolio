@@ -1,0 +1,23 @@
+:root {
+	color-scheme: light dark;
+	--action-surface-primary: var(--primary);
+	--focus: #8e51af;
+	--highlight: #d2d449;
+	--icon-fill: var(--text);
+	--link: var(--primary);
+	--hero-gradient: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(160, 228, 160, 1) 80%,
+		rgba(210, 212, 73, 1) 85%,
+		rgba(160, 228, 160, 1) 90%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	--primary: light-dark(#a0e4a0, #5b945b);
+	--secondary: var(--highlight);
+	--surface-primary: light-dark(white, rgb(24, 24, 24));
+	--surface-secondary: light-dark(#ffeded, #474040);
+	--surface-tertiary: light-dark(#fbc5ef, #a50081);
+	--text: light-dark(black, white);
+	--text-light: light-dark(#555555, #e1e1e1);
+}
