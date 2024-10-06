@@ -1,13 +1,11 @@
 ---
-import docIcon from "../assets/icons/doc-fill.svg?raw";
-import githubIcon from "../assets/icons/github-fill.svg?raw";
-import profileIcon from "../assets/icons/me-fill.svg?raw";
 import logo from "../assets/logo.svg?raw";
 import AppearanceToggle from "../components/appearance-toggle.astro";
 import PauseAnimationsButton from "../components/pause-animations-button.astro";
 import ThemeSelector from "../components/theme-selector.astro";
-import { urls } from "../constants";
 import "../global.css";
+
+const pathname = new URL(Astro.request.url).pathname;
 
 type Props = {
 	frontmatter?: Record<string, unknown>;
@@ -40,86 +38,93 @@ const {
 		</script>
 	</head>
 
-	<body>
+	<body class:list={{ "page-margin": !noMargin }}>
 		<div class="flex justify-center margin-16 skip-to-main">
-			<a href="#main"> Skip to content </a>
+			<a class="link" href="#main"> Skip to content </a>
 		</div>
-		<header class="header">
-			<div class="align-center row justify-between">
-				<a class="elevated-hover" href="/Portfolio">
-					<Fragment class="logo" set:html={logo} />
-				</a>
-				<nav>
-					<ul class="gap-8 justify-center row">
-						<li>
-							<a
-								aria-label="about me"
-								href="/Portfolio/about-me"
-								title="About me"
-								><Fragment set:html={profileIcon} /></a
-							>
-						</li>
-						<li>
-							<a
-								aria-label="Github (opens in new tab)"
-								href={urls.github}
-								rel="noopener noreferrer"
-								target="_blank"
-								title="Github"
-							>
-								<Fragment set:html={githubIcon} />
-							</a>
-						</li>
-					</ul>
-				</nav>
+		<header
+			class:list={{
+				"header align-center flex gap-16 justify-between": true,
+				"page-margin": noMargin,
+			}}
+		>
+			<nav>
+				<ul class="align-center gap-16 row">
+					<li>
+						<a
+							aria-current={pathname === "/Portfolio/"
+								? "page"
+								: undefined}
+							aria-label="Home"
+							class="elevated-hover link nav-link icon-button"
+							href="/Portfolio"
+							title="Home"
+						>
+							<Fragment set:html={logo} />
+						</a>
+					</li>
+					<li>
+						<a
+							aria-current={pathname === "/Portfolio/about-me"
+								? "page"
+								: undefined}
+							aria-label="About me"
+							class="icon-button link nav-link"
+							href="/Portfolio/about-me">About me</a
+						>
+					</li>
+				</ul>
+			</nav>
+			<div class="align-center flex gap-8 justify-between">
+				<ThemeSelector />
+				<AppearanceToggle />
 			</div>
 		</header>
 
-		{
-			!headerOnly && (
-				<div class="align-center flex gap-16 justify-center margin-16">
-					<PauseAnimationsButton />
-					<AppearanceToggle />
-					<ThemeSelector />
-				</div>
-			)
-		}
-		<main class:list={{ "page-margin": !noMargin, main: true }} id="main">
-			<slot />
+		<main id="main">
+			{
+				!headerOnly && (
+					<div class="flex justify-center margin-32">
+						<PauseAnimationsButton />
+					</div>
+				)
+			}
+			<div class:list={{ content: !headerOnly }}>
+				<slot />
+			</div>
 		</main>
-		{
-			!headerOnly && (
-				<footer class="align-center gap-16 justify-center label margin-16 row">
-					<span>©{new Date().getFullYear()}</span>
-				</footer>
-			)
-		}
+
+		<footer class="align-center gap-16 justify-center label margin-16 row">
+			<span>©{new Date().getFullYear()}</span>
+		</footer>
 	</body>
 </html>
 
-<style>
+<style is:global>
+	.content {
+		margin-block: 48px;
+	}
 	.header {
-		background-color: var(--primary);
-		padding: 0.5rem 6%;
-		a {
-			color: white;
-			text-decoration: none;
-			svg {
-				--icon-fill: white;
+		.link {
+			.icon {
+				--icon-fill: var(--primary);
+			}
+			.logo {
+				--icon-fill: var(--surface-primary);
 			}
 		}
 	}
 	.logo {
-		height: 24px;
-		width: 24px;
+		height: 48px;
+		width: 48px;
 	}
 
-	.main {
+	#main {
 		height: 100%;
 	}
 
 	.page-margin {
-		padding-block: 7%;
+		padding-block: 2%;
 		margin-inline: 20%;
 	}
 

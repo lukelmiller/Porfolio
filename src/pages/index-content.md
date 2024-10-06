@@ -1,7 +1,7 @@
 <style>
     .drop-in-animation{
         animation: drop-in forwards 4s 1;
-        animation-delay: 3s;
+        animation-delay: 2s;
         border-radius: 50%;
         opacity: 0%;
         transform: translateY(-2rem);
@@ -24,6 +24,8 @@
     }
 
     .hero-text{
+        animation-duration: 3s;
+        animation-name: shift-left;
         flex-basis: 50%;
     }
 
@@ -71,6 +73,8 @@
         }
         25% {
             border-radius: 50%;
+        }
+        50%{
             opacity: 100%;
         }
         100% {
@@ -89,6 +93,15 @@
     @keyframes wave {
         60% {
             transform: translateX(15px) rotate(16deg);
+        }
+    }
+
+    @keyframes shift-left {
+        from {
+            transform: translateX(96px);
+        }
+        to {
+            transform: translateX(0px);
         }
     }
 </style>

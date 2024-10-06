@@ -1,0 +1,89 @@
+---
+type Props = {
+	animateIcon?: boolean;
+	href: string;
+	linkExternal?: boolean;
+	linkLabel: string;
+	rawIcon: string;
+	title: string;
+};
+
+const {
+	animateIcon = true,
+	href,
+	linkExternal = false,
+	linkLabel,
+	rawIcon,
+	title,
+} = Astro.props;
+---
+
+<style>
+	.resume-card {
+		background-color: var(--surface-secondary);
+		inline-size: fit-content;
+		margin-inline: auto;
+		max-width: 800px;
+		width: 100;
+		flex: 1;
+
+		.doc-icon-container {
+			block-size: 128px;
+			border-radius: 50%;
+			inline-size: 128px;
+			flex-grow: 1;
+			flex-shink: 1;
+			overflow: hidden;
+			.icon {
+				block-size: 128px;
+				inline-size: 128px;
+				margin-inline: auto;
+			}
+		}
+		.info-container {
+			flex-basis: 50%;
+			flex-grow: 2;
+			flex-shrink: 1;
+		}
+		.title {
+			animation: none;
+			border-block-end-width: 0px;
+		}
+	}
+	.animate-icon {
+		&.resume-card {
+			.doc-icon-container .icon {
+				transition: 1s;
+				transform: translateY(50px);
+			}
+			&:hover,
+			&:focus-within {
+				.icon {
+					transform: translateY(25px);
+				}
+			}
+		}
+	}
+</style>
+<div
+	class:list={{
+		"align-center card gap-16 justify-center padding-16 row resume-card wrap": true,
+		"animate-icon": animateIcon,
+	}}
+>
+	<div class="doc-icon-container">
+		<Fragment set:html={rawIcon} />
+	</div>
+	<div class="info-container">
+		<h2 class="title">{title}</h2>
+		<a
+			aria-label={linkExternal
+				? `${linkLabel} (opens in new tab)`
+				: undefined}
+			class="button button-subtle elevated-hover"
+			href={href}
+			rel={linkExternal ? "noopener noreferrer" : undefined}
+			target={linkExternal ? "_blank" : undefined}>{linkLabel}</a
+		>
+	</div>
+</div>
