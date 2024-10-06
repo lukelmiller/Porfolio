@@ -21,45 +21,45 @@ const {
 <style>
 	.resume-card {
 		background-color: var(--surface-secondary);
-		inline-size: fit-content;
-		margin-inline: auto;
-		max-width: 800px;
-		width: 100;
-		flex: 1;
-
+		flex-basis: 45%;
+		flex-grow: 1;
+		flex-shrink: 1;
 		.doc-icon-container {
-			block-size: 128px;
 			border-radius: 50%;
-			inline-size: 128px;
 			flex-grow: 1;
-			flex-shink: 1;
 			overflow: hidden;
 			.icon {
-				block-size: 128px;
-				inline-size: 128px;
+				transform: translateY(8px);
+				max-block-size: 112px;
+				max-inline-size: 112px;
 				margin-inline: auto;
 			}
-		}
-		.info-container {
-			flex-basis: 50%;
-			flex-grow: 2;
-			flex-shrink: 1;
 		}
 		.title {
 			animation: none;
 			border-block-end-width: 0px;
 		}
 	}
-	.animate-icon {
-		&.resume-card {
-			.doc-icon-container .icon {
-				transition: 1s;
-				transform: translateY(50px);
-			}
-			&:hover,
-			&:focus-within {
-				.icon {
-					transform: translateY(25px);
+	.info-container {
+		flex-grow: 2;
+	}
+	.animate-icon.resume-card {
+		.doc-icon-container .icon {
+			transform: translateY(25px);
+		}
+	}
+	@media (hover: hover) {
+		.animate-icon {
+			&.resume-card {
+				.doc-icon-container .icon {
+					transition: 1s;
+					transform: translateY(50px);
+				}
+				&:hover,
+				&:focus-within {
+					.icon {
+						transform: translateY(25px);
+					}
 				}
 			}
 		}
@@ -67,7 +67,7 @@ const {
 </style>
 <div
 	class:list={{
-		"align-center card gap-16 justify-center padding-16 row resume-card wrap": true,
+		"align-center card gap-16 justify-evenly padding-16 row resume-card wrap": true,
 		"animate-icon": animateIcon,
 	}}
 >

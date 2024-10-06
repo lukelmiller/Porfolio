@@ -4,7 +4,6 @@ import lightModeIcon from "./assets/icons/sun-fill.svg?raw";
 
 export type Appearance = "auto" | "dark" | "light";
 export type Preferences = {
-	animationsPaused: boolean;
 	appearance: Appearance;
 	theme: Theme;
 };
@@ -43,8 +42,7 @@ export const getCurrentSeason = (date = new Date()): Omit<Theme, "auto"> => {
 
 export const getPreferences = (): Preferences => {
 	const preferencesRawValue = window?.localStorage?.getItem("preferences");
-	if (!preferencesRawValue)
-		return { animationsPaused: false, appearance: "auto", theme: "auto" };
+	if (!preferencesRawValue) return { appearance: "auto", theme: "auto" };
 	return JSON.parse(preferencesRawValue);
 };
 

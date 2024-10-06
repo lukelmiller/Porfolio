@@ -12,20 +12,24 @@ import { Content } from "./index-content.md";
 	<Content />
 	<Technologies />
 	<hr />
-	<div class="row gap-16 wrap">
+	<div class="justify-center gap-16 related-container row wrap">
+		<ContentCard
+			href="/Portfolio/resume"
+			linkLabel="View resume"
+			rawIcon={docLargeIcon}
+			title="Looking for\n something official?"
+		/>
 		<ContentCard
 			animateIcon={false}
 			href={urls.github}
 			linkExternal={true}
 			linkLabel="Open Github"
 			rawIcon={githubIcon}
-			title="Got a Github?"
-		/>
-		<ContentCard
-			href="/Portfolio/resume"
-			linkLabel="View resume"
-			rawIcon={docLargeIcon}
-			title="Looking for something more official?"
+			title="Got Github?"
 		/>
 	</div>
 </GlobalLayout>
+<style>
+	.related-container {
+	}
+</style>

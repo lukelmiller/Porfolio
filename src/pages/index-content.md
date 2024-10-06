@@ -26,7 +26,7 @@
 
     .hero-text{
         animation-duration: 3s;
-        animation-name: shift-left;
+        animation-name: drop-in;
         flex-basis: 50%;
     }
 

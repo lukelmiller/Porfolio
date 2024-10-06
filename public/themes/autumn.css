@@ -14,8 +14,8 @@
 	);
 	--primary: #933330;
 	--secondary: var(--highlight);
-	--surface-secondary: light-dark(white, rgb(24, 24, 24));
-	--surface-primary: light-dark(#fffced, #373632);
+	--surface-primary: light-dark(white, rgb(24, 24, 24));
+	--surface-secondary: light-dark(#fffced, #373632);
 	--surface-tertiary: #3c5b66;
 	--text: light-dark(black, white);
 	--text-light: light-dark(#555555, #e9e9e9);
