@@ -1,7 +1,7 @@
 <style>
     .drop-in-animation{
         animation: drop-in forwards 4s 1;
-        animation-delay: 3s;
+        animation-delay: 2s;
         border-radius: 50%;
         opacity: 0%;
         transform: translateY(-2rem);
@@ -24,6 +24,8 @@
     }
 
     .hero-text{
+        animation-duration: 3s;
+        animation-name: shift-left;
         flex-basis: 50%;
     }
 
@@ -71,6 +73,8 @@
         }
         25% {
             border-radius: 50%;
+        }
+        50%{
             opacity: 100%;
         }
         100% {
@@ -91,6 +95,15 @@
             transform: translateX(15px) rotate(16deg);
         }
     }
+
+    @keyframes shift-left {
+        from {
+            transform: translateX(96px);
+        }
+        to {
+            transform: translateX(0px);
+        }
+    }
 </style>
 
 <div class="hero">
@@ -106,7 +119,7 @@
 
 <blockquote class="badge badge-subtle blockquote">Passionate. Professional. Programmer.</blockquote>
 
-<p>Let me introduce myself. I've been a programmer professionally for three plus years now and unprofessionally since 2016. I'm currently doing tons of work on the frontend, focusing on web development but also some mobile stuff. I have also many passions and hobbies. You can find all that and more on my <a href="/Portfolio/about-me">about me</a> page. </p>
+<p>Let me introduce myself. I've been a programmer professionally for three plus years now and unprofessionally since 2016. I'm currently doing tons of work on the frontend, focusing on web development but also some mobile stuff. I have also many passions and hobbies. You can find all that and more on my <a class="link" href="/Portfolio/about-me">about me</a> page. </p>
 </div>
 </div>
 
