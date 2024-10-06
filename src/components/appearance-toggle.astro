@@ -14,36 +14,32 @@
 	import {
 		appearanceContentMap,
 		appearanceOrder,
-		getCurrentSeason,
 		getPreferences,
+		getRenderedTheme,
 		setPreferences,
-		type Appearance,
 	} from "../utils";
 
 	class AppearanceToggle extends HTMLElement {
 		connectedCallback() {
-			const date = new Date();
-			const currentSeason = getCurrentSeason(date);
 			const prefs = getPreferences();
 
 			const appearanceToggle = this.querySelector("button")!;
-			const styleRoot = document.getElementById("global-theme-root")!;
+			const appearanceStyleRoot = document.getElementById(
+				"global-appearance-root"
+			)!;
 
-			let appearance: Appearance = prefs.appearance || "auto";
+			let appearance = prefs.appearance;
 			let toggleIndex = appearanceOrder.indexOf(appearance);
 
 			appearanceToggle?.addEventListener("click", () => {
-				const prefs = getPreferences();
-				const theme = prefs.theme || currentSeason;
-
 				toggleIndex = (toggleIndex + 1) % 3;
 				appearance = appearanceOrder[toggleIndex];
 
 				appearanceToggle.innerHTML = appearanceContentMap[appearance];
 
-				styleRoot.setAttribute(
+				appearanceStyleRoot.setAttribute(
 					"href",
-					`/Portfolio/themes/${theme}-${appearance}.css`
+					`/Portfolio/appearances/${appearance}.css`
 				);
 
 				setPreferences({

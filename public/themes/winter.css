@@ -1,5 +1,4 @@
 :root {
-	color-scheme: light dark;
 	--action-surface-primary: #dabcce;
 	--focus: #a2b0e3;
 	--highlight: light-dark(#dabcce, #ab136e);

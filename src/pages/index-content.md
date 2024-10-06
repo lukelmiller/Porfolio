@@ -26,7 +26,7 @@
 
     .hero-text{
         animation-duration: 3s;
-        animation-name: shift-left;
+        animation-name: drop-in;
         flex-basis: 50%;
     }
 
@@ -94,15 +94,6 @@
     @keyframes wave {
         60% {
             transform: translateX(15px) rotate(16deg);
-        }
-    }
-
-    @keyframes shift-left {
-        from {
-            transform: translateX(96px);
-        }
-        to {
-            transform: translateX(0px);
         }
     }
 </style>

@@ -11,7 +11,6 @@
 <script>
 	import pauseIcon from "../assets/icons/pause.svg?raw";
 	import playIcon from "../assets/icons/play.svg?raw";
-	import { getPreferences, setPreferences } from "../utils";
 
 	const pauseContent = `${pauseIcon} Pause animations`;
 	const playContent = `${playIcon} Play animations`;
@@ -20,9 +19,8 @@
 		connectedCallback() {
 			const body = document.querySelector("body")!;
 			const button = this.querySelector("button")!;
-			const prefs = getPreferences();
 
-			let isPaused = prefs.animationsPaused || false;
+			let isPaused = false;
 
 			if (isPaused) body.classList.add("pause-all-animations");
 
@@ -34,8 +32,6 @@
 				button.innerHTML = isPaused ? playContent : pauseContent;
 
 				body.classList.toggle("pause-all-animations");
-
-				setPreferences({ animationsPaused: isPaused });
 			});
 		}
 	}

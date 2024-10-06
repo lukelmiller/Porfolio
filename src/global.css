@@ -197,7 +197,6 @@ ul {
 	border-radius: 2px;
 	color: var(--link);
 	font-weight: bolder;
-
 	padding-block-end: 4px;
 	transition: var(--transition-time);
 	&:focus,
@@ -211,6 +210,10 @@ ul {
 	&[aria-current="page"] {
 		border-block-end: 3px solid var(--primary);
 		border-radius: 2px !important;
+		.logo {
+			border: 2px solid var(--primary);
+			border-radius: 50%;
+		}
 	}
 }
 .list-styled {
@@ -323,6 +326,9 @@ ul {
 }
 .wrap {
 	flex-wrap: wrap;
+}
+.wrap-reverse {
+	flex-wrap: wrap-reverse;
 }
 
 /* Animations: */
