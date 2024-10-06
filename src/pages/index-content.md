@@ -9,6 +9,7 @@
 
     .hand {
         animation: wave forwards 0.9s 3;
+        animation-delay: 5.5s;
         animation-timing-function: linear;
         &:hover{
             animation: wave forwards 0.9s infinite;
