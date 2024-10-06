@@ -9,9 +9,9 @@ export type Preferences = {
 };
 export type Theme = "auto" | "autumn" | "spring" | "summer" | "winter";
 
-export const autoModeContent = `${autoModeIcon}<span class="label">SYSTEM</span>`;
-export const darkModeContent = `${darkModeIcon}<span class="label">DARK</span>`;
-export const lightModeContent = `${lightModeIcon}<span class="label">LIGHT</span>`;
+export const autoModeContent = `<span aria-label="switch to light mode" class="label">${autoModeIcon}</span>`;
+export const darkModeContent = `<span aria-label="switch to system appearance mode" class="label">${darkModeIcon}</span>`;
+export const lightModeContent = `<span aria-label="switch to dark mode" class="label">${lightModeIcon}</span>`;
 
 export const appearanceContentMap = {
 	auto: autoModeContent,
@@ -23,9 +23,7 @@ export const prefersDark = window.matchMedia(
 	"(prefers-color-scheme: dark)"
 ).matches;
 
-export const appearanceOrder: Appearance[] = prefersDark
-	? ["auto", "light", "dark"]
-	: ["auto", "dark", "light"];
+export const appearanceOrder: Appearance[] = ["auto", "light", "dark"];
 
 export const getCurrentSeason = (date = new Date()): Omit<Theme, "auto"> => {
 	const firstDayOfSpring = new Date(date.getFullYear(), 2, 22);
