@@ -106,7 +106,7 @@
 
 <blockquote class="badge badge-subtle blockquote">Passionate. Professional. Programmer.</blockquote>
 
-<p>Let me introduce myself. I've been a programmer professionally for three plus years now and unprofessionally since 2016. I'm currently doing tons of work on the frontend, focusing on web development but also some mobile stuff. I have also many passions and hobbies. You can find all that and more on my <a href="/Portfolio/about-me">about me</a> page. </p>
+<p>Let me introduce myself. I've been a programmer professionally for three plus years now and unprofessionally since 2016. I'm currently doing tons of work on the frontend, focusing on web development but also some mobile stuff. I have also many passions and hobbies. You can find all that and more on my <a class="link" href="/Portfolio/about-me">about me</a> page. </p>
 </div>
 </div>
 
