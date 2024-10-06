@@ -32,6 +32,11 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title || frontmatter?.title}</title>
 		<link id="global-theme-root" rel="stylesheet" />
+		<link
+			href="/Portfolio/appearance/auto.css"
+			id="global-appearance-root"
+			rel="stylesheet"
+		/>
 		<script>
 			import { initializeTheme } from "../utils";
 			initializeTheme();

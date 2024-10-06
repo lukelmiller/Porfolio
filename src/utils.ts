@@ -3,6 +3,12 @@ import darkModeIcon from "./assets/icons/moon-fill.svg?raw";
 import lightModeIcon from "./assets/icons/sun-fill.svg?raw";
 
 export type Appearance = "auto" | "dark" | "light";
+export type Preferences = {
+	animationsPaused: boolean;
+	appearance: Appearance;
+	theme: Theme;
+};
+export type Theme = "auto" | "autumn" | "spring" | "summer" | "winter";
 
 export const autoModeContent = `${autoModeIcon}<span class="label">SYSTEM</span>`;
 export const darkModeContent = `${darkModeIcon}<span class="label">DARK</span>`;
@@ -22,7 +28,7 @@ export const appearanceOrder: Appearance[] = prefersDark
 	? ["auto", "light", "dark"]
 	: ["auto", "dark", "light"];
 
-export const getCurrentSeason = (date: Date) => {
+export const getCurrentSeason = (date = new Date()): Omit<Theme, "auto"> => {
 	const firstDayOfSpring = new Date(date.getFullYear(), 2, 22);
 	const firstDayOfSummer = new Date(date.getFullYear(), 6, 22);
 	const firstDayOfFall = new Date(date.getFullYear(), 8, 22);
@@ -35,10 +41,22 @@ export const getCurrentSeason = (date: Date) => {
 	return "winter";
 };
 
-export const getPreferences = () =>
-	JSON.parse(window?.localStorage?.getItem("preferences") || "{}");
+export const getPreferences = (): Preferences => {
+	const preferencesRawValue = window?.localStorage?.getItem("preferences");
+	if (!preferencesRawValue)
+		return { animationsPaused: false, appearance: "auto", theme: "auto" };
+	return JSON.parse(preferencesRawValue);
+};
 
-export const setPreferences = (prefs: Record<string, unknown>) => {
+/**
+ * Get rendered theme from selected theme
+ * @param selectedTheme
+ * @returns
+ */
+export const getRenderedTheme = (selectedTheme: Theme): Omit<Theme, "auto"> =>
+	selectedTheme === "auto" ? getCurrentSeason() : selectedTheme;
+
+export const setPreferences = (prefs: Partial<Preferences>) => {
 	window.localStorage.setItem(
 		"preferences",
 		JSON.stringify({
@@ -49,21 +67,29 @@ export const setPreferences = (prefs: Record<string, unknown>) => {
 };
 
 export const initializeTheme = () => {
-	const date = new Date();
-	const currentSeason = getCurrentSeason(date);
 	const prefs = getPreferences();
 
 	const appearanceToggle = document.getElementById("appearance-toggle");
-	const styleRoot = document.getElementById("global-theme-root");
+	("global-appearance-root");
+	const appearanceStyleRoot = document.getElementById(
+		"global-appearance-root"
+	);
+	const themeStyleRoot = document.getElementById("global-theme-root");
 	const themeSelect = document.getElementById("theme-select");
 
-	const appearance: Appearance = prefs.appearance || "auto";
-	const theme = prefs.theme || currentSeason;
+	const appearance: Appearance = prefs.appearance;
+	const theme = prefs.theme;
+	const renderedTheme = getRenderedTheme(prefs.theme);
 
-	if (styleRoot)
-		styleRoot.setAttribute(
+	if (appearanceStyleRoot)
+		appearanceStyleRoot.setAttribute(
 			"href",
-			`/Portfolio/themes/${theme}-${appearance}.css`
+			`/Portfolio/appearances/${appearance}.css`
+		);
+	if (themeStyleRoot)
+		themeStyleRoot.setAttribute(
+			"href",
+			`/Portfolio/themes/${renderedTheme}.css`
 		);
 	if (appearanceToggle)
 		appearanceToggle.innerHTML = appearanceContentMap[appearance];

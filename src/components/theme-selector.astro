@@ -7,6 +7,7 @@ import dropDownIcon from "../assets/icons/drop-down.svg?raw";
 		<label class="label" for="theme-select">THEME:</label>
 		<div class="button button-subtle elevated-hover">
 			<select class="select" id="theme-select">
+				<option value="auto">Auto</option>
 				<option value="autumn">Autumn</option>
 				<option value="spring">Spring</option>
 				<option value="summer">Summer</option>
@@ -18,30 +19,25 @@ import dropDownIcon from "../assets/icons/drop-down.svg?raw";
 >
 
 <script>
-	import { getCurrentSeason, getPreferences, setPreferences } from "../utils";
+	import { getRenderedTheme, setPreferences, type Theme } from "../utils";
 
 	class ThemeSelect extends HTMLElement {
 		connectedCallback() {
-			const date = new Date();
-			const currentSeason = getCurrentSeason(date);
-
 			const styleRoot = document.getElementById("global-theme-root")!;
 			const themeSelect = this.querySelector("select")!;
 
-			// Each time the button is clicked, update the count.
 			themeSelect?.addEventListener("change", (event) => {
-				const prefs = getPreferences();
-
-				const appearance = prefs.appearance || "auto";
-				const theme = (event.target as HTMLSelectElement).value;
+				const theme = (event.target as HTMLSelectElement)
+					.value as Theme;
+				const renderedTheme = getRenderedTheme(theme);
 
 				styleRoot.setAttribute(
 					"href",
-					`/Portfolio/themes/${theme}-${appearance}.css`
+					`/Portfolio/themes/${renderedTheme}.css`
 				);
 
 				setPreferences({
-					theme: theme === currentSeason ? undefined : theme,
+					theme,
 				});
 			});
 		}

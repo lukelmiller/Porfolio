@@ -1,5 +1,4 @@
 :root {
-	color-scheme: dark;
 	--action-surface-primary: var(--primary);
 	--focus: #3c5b66;
 	--highlight: #d7a151;
@@ -15,9 +14,9 @@
 	);
 	--primary: #933330;
 	--secondary: var(--highlight);
-	--surface-primary: rgb(24, 24, 24);
-	--surface-secondary: #373632;
+	--surface-secondary: light-dark(white, rgb(24, 24, 24));
+	--surface-primary: light-dark(#fffced, #373632);
 	--surface-tertiary: #3c5b66;
-	--text: rgb(255, 255, 255);
-	--text-light: #e1e1e1;
+	--text: light-dark(black, white);
+	--text-light: light-dark(#555555, #e9e9e9);
 }
