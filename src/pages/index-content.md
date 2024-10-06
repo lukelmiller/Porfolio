@@ -96,15 +96,6 @@
             transform: translateX(15px) rotate(16deg);
         }
     }
-
-    @keyframes shift-left {
-        from {
-            transform: translateX(96px);
-        }
-        to {
-            transform: translateX(0px);
-        }
-    }
 </style>
 
 <div class="hero">
