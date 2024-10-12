@@ -9,14 +9,16 @@ export type Preferences = {
 };
 export type Theme = "auto" | "autumn" | "spring" | "summer" | "winter";
 
-export const autoModeContent = `<span aria-label="switch to light mode" class="label">${autoModeIcon}</span>`;
-export const darkModeContent = `<span aria-label="switch to system appearance mode" class="label">${darkModeIcon}</span>`;
-export const lightModeContent = `<span aria-label="switch to dark mode" class="label">${lightModeIcon}</span>`;
+export const appearanceAriaLabelMap = {
+	auto: "Switch to system appearance",
+	dark: "Switch to dark appearance",
+	light: "Switch to light appearance",
+};
 
 export const appearanceContentMap = {
-	auto: autoModeContent,
-	dark: darkModeContent,
-	light: lightModeContent,
+	auto: autoModeIcon,
+	dark: darkModeIcon,
+	light: lightModeIcon,
 };
 
 export const appearanceTitleMap = {
