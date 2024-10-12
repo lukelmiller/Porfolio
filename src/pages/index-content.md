@@ -110,7 +110,7 @@
 <div class="stack">
 <div class="drop-in-animation profile-img-glow">
 </div>
-<img loading="eager" class="drop-in-animation elevated-hover profile-img" src="/Portfolio/imgs/profile.jpg" />
+<img alt="Luke" loading="eager" class="drop-in-animation elevated-hover profile-img" src="/Portfolio/imgs/profile.jpg" />
 </div>
 
 <div class="flex-1 hero-text">
@@ -122,7 +122,7 @@
 </div>
 </div>
 
----
+<hr aria-hidden="true" />
 
 ## Education
 

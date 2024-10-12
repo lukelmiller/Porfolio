@@ -5,6 +5,8 @@ title: Personal life
 
 # Personal stuff, hobbies, passions, and things
 
+<hr aria-hidden="true" />
+
 ## Accessibility
 
 I’m passionate about accessibility in software because everyone deserves to be able to use technology, no matter what. I believe great design should be intuitive and inclusive, ensuring people of all abilities can engage with it easily. Accessibility isn’t just a feature—it’s a core part of creating user-friendly software that empowers everyone.

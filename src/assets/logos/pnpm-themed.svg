@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="66.09157809474142 33.5 184.5 184.49999999999997">
+<svg aria-hidden="true" focusable="false" class="tech-logo" xmlns="http://www.w3.org/2000/svg"
+    viewBox="66.09157809474142 33.5 184.5 184.49999999999997">
     <defs>
         <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="var(--primary)" />
