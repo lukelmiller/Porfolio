@@ -12,6 +12,7 @@
 
 <script>
 	import {
+		appearanceAriaLabelMap,
 		appearanceContentMap,
 		appearanceOrder,
 		appearanceTitleMap,
@@ -30,6 +31,13 @@
 
 			let appearance = prefs.appearance;
 			let toggleIndex = appearanceOrder.indexOf(appearance);
+
+			const nextAppearance = appearanceOrder[(toggleIndex + 1) % 3];
+
+			appearanceToggle.setAttribute(
+				"aria-label",
+				appearanceAriaLabelMap[nextAppearance]
+			);
 			appearanceToggle.setAttribute(
 				"title",
 				appearanceTitleMap[appearance]
@@ -38,6 +46,7 @@
 			appearanceToggle?.addEventListener("click", () => {
 				toggleIndex = (toggleIndex + 1) % 3;
 				appearance = appearanceOrder[toggleIndex];
+				const nextAppearance = appearanceOrder[(toggleIndex + 1) % 3];
 
 				appearanceToggle.innerHTML = appearanceContentMap[appearance];
 
@@ -46,6 +55,10 @@
 					`/Portfolio/appearances/${appearance}.css`
 				);
 
+				appearanceToggle.setAttribute(
+					"aria-label",
+					appearanceAriaLabelMap[nextAppearance]
+				);
 				appearanceToggle.setAttribute(
 					"title",
 					appearanceTitleMap[appearance]
