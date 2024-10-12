@@ -19,6 +19,12 @@ export const appearanceContentMap = {
 	light: lightModeContent,
 };
 
+export const appearanceTitleMap = {
+	auto: "System appearance",
+	dark: "Dark appearance",
+	light: "Light appearance",
+};
+
 export const prefersDark = window.matchMedia(
 	"(prefers-color-scheme: dark)"
 ).matches;

@@ -14,8 +14,8 @@
 	import {
 		appearanceContentMap,
 		appearanceOrder,
+		appearanceTitleMap,
 		getPreferences,
-		getRenderedTheme,
 		setPreferences,
 	} from "../utils";
 
@@ -30,6 +30,10 @@
 
 			let appearance = prefs.appearance;
 			let toggleIndex = appearanceOrder.indexOf(appearance);
+			appearanceToggle.setAttribute(
+				"title",
+				appearanceTitleMap[appearance]
+			);
 
 			appearanceToggle?.addEventListener("click", () => {
 				toggleIndex = (toggleIndex + 1) % 3;
@@ -40,6 +44,11 @@
 				appearanceStyleRoot.setAttribute(
 					"href",
 					`/Portfolio/appearances/${appearance}.css`
+				);
+
+				appearanceToggle.setAttribute(
+					"title",
+					appearanceTitleMap[appearance]
 				);
 
 				setPreferences({
