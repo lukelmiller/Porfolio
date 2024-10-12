@@ -19,47 +19,45 @@ const {
 ---
 
 <style>
+	.doc-icon-container {
+		border-radius: 50%;
+		flex-grow: 1;
+		overflow: hidden;
+		.icon {
+			transform: translateY(8px);
+			max-block-size: 112px;
+			max-inline-size: 112px;
+			margin-inline: auto;
+		}
+	}
 	.resume-card {
 		background-color: var(--surface-secondary);
 		flex-basis: 45%;
 		flex-grow: 1;
 		flex-shrink: 1;
-		.doc-icon-container {
-			border-radius: 50%;
-			flex-grow: 1;
-			overflow: hidden;
-			.icon {
-				transform: translateY(8px);
-				max-block-size: 112px;
-				max-inline-size: 112px;
-				margin-inline: auto;
-			}
-		}
-		.title {
-			animation: none;
-			border-block-end-width: 0px;
-		}
+	}
+	.title {
+		animation: none;
+		border-block-end-width: 0px;
 	}
 	.info-container {
 		flex-grow: 2;
 	}
-	.animate-icon.resume-card {
+	.animate-icon {
 		.doc-icon-container .icon {
 			transform: translateY(25px);
 		}
 	}
 	@media (hover: hover) {
 		.animate-icon {
-			&.resume-card {
-				.doc-icon-container .icon {
-					transition: 1s;
-					transform: translateY(50px);
-				}
-				&:hover,
-				&:focus-within {
-					.icon {
-						transform: translateY(25px);
-					}
+			.doc-icon-container .icon {
+				transition: 1s;
+				transform: translateY(35px);
+			}
+			&:hover,
+			&:focus-within {
+				.icon {
+					transform: translateY(15px);
 				}
 			}
 		}

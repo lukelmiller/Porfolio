@@ -111,7 +111,7 @@
 
 <blockquote class="badge badge-subtle blockquote">Passionate. Professional. Programmer.</blockquote>
 
-<p>Let me introduce myself. I've been a programmer professionally for three plus years now and unprofessionally since 2016. I'm currently doing tons of work on the frontend, focusing on web development but also some mobile stuff. I have also many passions and hobbies. You can find all that and more on my <a class="link" href="/Portfolio/about-me">about me</a> page. </p>
+<p>Let me introduce myself. I've been a professional programmer for over three years, with experience dating back to 2016. I’m currently focused on frontend development, specializing in web projects and some mobile work. I also have a wide range of passions and hobbies, which you can explore further on my <a class="link" href="/Portfolio/about-me">about me</a> page.</p>
 </div>
 </div>
 
@@ -137,26 +137,42 @@
 
 ## Professional work
 
-### Visa - Design engineer <span class="badge">2021 - now</span>
+### Visa - Design engineer <span class="badge">2022 - now</span>
+
+<div class="list-styled">
+
+-   All previous responsibilities
+-   Technical and team lead for React and/or TypeScript projects
+-   Design system library
+    -   Required maximum flexibility for 2000+ internal dev user base
+    -   Architect of React library
+        -   Achieved 100% test coverage
+        -   Added strict type safety
+        -   Reduced build times in half
+        -   Shrank bundle size by 60%
+    -   Architect of icons libraries
+        -   Dedicated libraries for Angular, Flutter, HTML, and React
+        -   Allowed for tree shaking, improved consuming dev experience, and completely type safe
+    -   Assisted architecture and development of Angular library
+        -   Reduced build times by 15%
+        -   Reduced bundles size of consuming apps by up to 50%
+        -   Full migration to standalone components
+    -   Fixed hundreds of bugs
+-   Mentored many teammates, elevated skills across the entire team
+-   Taught in internal learning sessions
+-   Assisted in interviewing and hiring new candidates for development
+
+</div>
+
+### Visa - Associate design engineer <span class="badge">2021 - 2022</span>
 
 <div class="list-styled">
 
 -   Frontend application development
-    -   Built demos, prototypes, and full applications with Angular, Dart, Flutter, React, and TypeScript
-    -   Team lead for project and technology
--   Design system library
-    -   Libraries used by most UI developers at Visa (2000+)
-    -   Architect of React library
-        -   Achieved 100% test coverage
-        -   Added strict type safety
-        -   Record breaking build times
-        -   Shrank bundle size by 60%
-    -   Assisted architecture and development of Angular library
-    -   Built icons library
-    -   Fixed hundreds of bugs
+-   Built demos, prototypes, and full applications with Angular, Dart, Flutter, React, and TypeScript
+-   Frequent presentations to stakeholders and consumers
+-   Frequent communication between stakeholders, designers, accessibility, and fellow developers
 -   Strict accessibility requirements across all projects
--   Mentored many teammates, elevated skills across the entire team
--   Assist in interviewing and hiring new candidates for development
 
 </div>
 

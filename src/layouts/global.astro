@@ -59,7 +59,7 @@ const {
 						<a
 							aria-current={isHome ? "page" : undefined}
 							aria-label="Home"
-							class="link nav-link icon-button"
+							class="elevated-hover logo-link link nav-link"
 							href="/Portfolio"
 							title="Home"
 						>
@@ -70,7 +70,7 @@ const {
 						<a
 							aria-current={!isHome ? "page" : undefined}
 							aria-label="About me"
-							class="icon-button link nav-link"
+							class="link nav-link"
 							href="/Portfolio/about-me">About me</a
 						>
 					</li>
@@ -105,16 +105,12 @@ const {
 	.content {
 		margin-block: 48px;
 	}
-	.header {
-		.link {
-			.icon {
-				--icon-fill: var(--primary);
-			}
-			.logo {
-				--icon-fill: var(--surface-primary);
-			}
-		}
+
+	.logo-link {
+		display: block;
+		border-radius: 50%;
 	}
+
 	.logo {
 		height: 48px;
 		width: 48px;
