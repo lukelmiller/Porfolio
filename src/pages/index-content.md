@@ -1,4 +1,11 @@
 <style>
+    h2, h3{
+        .brand {
+            inline-size: 100%;
+            max-block-size: 1.5rem;
+            max-inline-size: 1.5rem;
+        }
+    }
     .drop-in-animation{
         animation: drop-in forwards 4s 1;
         animation-delay: 2s;
@@ -103,7 +110,7 @@
 <div class="stack">
 <div class="drop-in-animation profile-img-glow">
 </div>
-<img loading="eager" class="drop-in-animation elevated-hover profile-img" src="/Portfolio/imgs/profile.png" />
+<img loading="eager" class="drop-in-animation elevated-hover profile-img" src="/Portfolio/imgs/profile.jpg" />
 </div>
 
 <div class="flex-1 hero-text">
@@ -119,7 +126,7 @@
 
 ## Education
 
-### University of Arkansas <span class="badge">2019 - 2021</span>
+### <span class="flex-1 gap-4 row align-center"><img alt="" class="brand margin-right-4" src="/Portfolio/brands/uark.svg"/> University of Arkansas</span> <span class="badge">2019 - 2021</span>
 
 <div class="list-styled">
 
@@ -127,7 +134,7 @@
 
 </div>
 
-### Ozark community college <span class="badge">2016 - 2018</span>
+### <span class="flex-1 gap-4 row align-center"><img alt="" class="brand margin-right-4" src="/Portfolio/brands/otc.svg"/> Ozark community college</span> <span class="badge">2016 - 2018</span>
 
 <div class="list-styled">
 
@@ -137,7 +144,7 @@
 
 ## Professional work
 
-### Visa - Design engineer <span class="badge">2022 - now</span>
+### <span class="flex-1 gap-4 row align-center"><img alt="" class="brand margin-right-4" src="/Portfolio/brands/visa-equity.svg"/> Visa - Design engineer</span> <span class="badge">2022 - now</span>
 
 <div class="list-styled">
 
@@ -164,7 +171,7 @@
 
 </div>
 
-### Visa - Associate design engineer <span class="badge">2021 - 2022</span>
+### <span class="flex-1 gap-4 row align-center"><img alt="" class="brand margin-right-4" src="/Portfolio/brands/visa-equity.svg"/> Visa - Associate design engineer</span> <span class="badge">2021 - 2022</span>
 
 <div class="list-styled">
 
@@ -178,7 +185,7 @@
 
 ## Service work
 
-### Darden restaurants - Server <span class="badge">2019 - 2021</span>
+### <span class="flex-1 gap-4 row align-center"><img alt="" class="brand margin-right-4" src="/Portfolio/brands/olive-garden.svg"/> Darden restaurants - Server</span> <span class="badge">2019 - 2021</span>
 
 <div class="list-styled">
 

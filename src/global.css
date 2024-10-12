@@ -260,9 +260,24 @@ ul {
 	background: none;
 	border: none;
 	cursor: pointer;
+
 	&:focus {
 		border: none;
 		outline: none;
+	}
+}
+.select-container {
+	position: relative;
+	font-size: 1rem;
+	.select {
+		padding-inline-end: 12px;
+	}
+	.drop-down {
+		block-size: 8px;
+		inline-size: 8px;
+		pointer-events: none;
+		position: absolute;
+		right: 4px;
 	}
 }
 
@@ -310,6 +325,9 @@ ul {
 }
 .margin-4 {
 	margin: 4px;
+}
+.margin-right-4 {
+	margin-inline-end: 4px;
 }
 .margin-8 {
 	margin: 8px;
