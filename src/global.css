@@ -331,6 +331,9 @@ ul {
 .margin-16 {
 	margin: 16px;
 }
+.margin-bottom-16 {
+	margin-block-end: 16px;
+}
 .margin-32 {
 	margin: 32px;
 }

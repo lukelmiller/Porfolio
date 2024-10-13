@@ -31,10 +31,7 @@ import dropDownIcon from "../assets/icons/drop-down.svg?raw";
 					.value as Theme;
 				const renderedTheme = getRenderedTheme(theme);
 
-				styleRoot.setAttribute(
-					"href",
-					`/Portfolio/themes/${renderedTheme}.css`
-				);
+				styleRoot.setAttribute("href", `/themes/${renderedTheme}.css`);
 
 				setPreferences({
 					theme,
