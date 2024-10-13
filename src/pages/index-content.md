@@ -39,10 +39,11 @@
     }
 
     .profile-img { 
-        block-size: 400px;
         border: 6px solid color-mix(in srgb, var(--surface-primary) 50%, transparent);
         border-radius: var(--border-radius);
-        inline-size: 400px;
+        inline-size: 100%;
+        max-block-size: 400px;
+        max-inline-size: 400px;
         transform: translateY(0);
     }
 
