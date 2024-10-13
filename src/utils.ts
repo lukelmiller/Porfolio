@@ -88,13 +88,10 @@ export const initializeTheme = () => {
 	if (appearanceStyleRoot)
 		appearanceStyleRoot.setAttribute(
 			"href",
-			`/Portfolio/appearances/${appearance}.css`
+			`/appearances/${appearance}.css`
 		);
 	if (themeStyleRoot)
-		themeStyleRoot.setAttribute(
-			"href",
-			`/Portfolio/themes/${renderedTheme}.css`
-		);
+		themeStyleRoot.setAttribute("href", `/themes/${renderedTheme}.css`);
 	if (appearanceToggle)
 		appearanceToggle.innerHTML = appearanceContentMap[appearance];
 	if (themeSelect) (themeSelect as HTMLSelectElement).value = theme;
