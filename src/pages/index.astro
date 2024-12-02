@@ -5,30 +5,301 @@ import ContentCard from "../components/content-card.astro";
 import Technologies from "../components/technologies.astro";
 import { urls } from "../constants";
 import GlobalLayout from "../layouts/global.astro";
-import { Content } from "./index-content.md";
 ---
 
-<GlobalLayout title="Hi I'm Luke">
-	<Content />
-	<Technologies />
-	<hr aria-hidden="true" />
-	<div class="justify-center gap-16 related-container row wrap">
-		<ContentCard
-			href="/resume"
-			linkLabel="View resume"
-			rawIcon={docLargeIcon}
-			title="Looking for\n something official?"
-		/>
-		<ContentCard
-			href={urls.github}
-			linkExternal={true}
-			linkLabel="Open Github"
-			rawIcon={githubIcon}
-			title="Got Github?"
-		/>
-	</div>
-</GlobalLayout>
 <style>
-	.related-container {
-	}
+  h2,
+  h3 {
+    .brand {
+      inline-size: 100%;
+      max-block-size: 1.5rem;
+      max-inline-size: 1.5rem;
+    }
+  }
+  .drop-in-animation {
+    animation: drop-in forwards 4s 1;
+    animation-delay: 2s;
+    border-radius: 50%;
+    opacity: 0%;
+    transform: translateY(-2rem);
+  }
+
+  .hand {
+    animation: wave forwards 0.9s 3;
+    animation-delay: 5.5s;
+    animation-timing-function: linear;
+    &:hover {
+      animation: wave forwards 0.9s infinite;
+    }
+  }
+
+  .hero {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+    min-block-size: 75vh;
+  }
+
+  .hero-text {
+    animation-duration: 3s;
+    animation-name: drop-in;
+    flex-basis: 50%;
+  }
+
+  .profile-img {
+    border: 6px solid
+      color-mix(in srgb, var(--surface-primary) 50%, transparent);
+    border-radius: var(--border-radius);
+    inline-size: 100%;
+    max-block-size: 400px;
+    max-inline-size: 400px;
+    transform: translateY(0);
+  }
+
+  .profile-img-glow {
+    block-size: 100%;
+    border-radius: var(--border-radius);
+    filter: blur(16px);
+    inline-size: 100%;
+    overflow: hidden;
+    position: absolute;
+
+    &:before {
+      animation: rotate 8s linear infinite;
+      background: var(--hero-gradient);
+      background-repeat: no-repeat;
+      block-size: 150%;
+      content: "";
+      position: absolute;
+      inline-size: 150%;
+      left: -25%;
+      top: -25%;
+    }
+  }
+
+  .stack {
+    block-size: fit-content;
+    inline-size: fit-content;
+    position: relative;
+  }
+
+  @keyframes drop-in {
+    0% {
+      border-radius: 50%;
+      opacity: 0%;
+      transform: translateY(-2rem);
+    }
+    25% {
+      border-radius: 50%;
+    }
+    50% {
+      opacity: 100%;
+    }
+    100% {
+      border-radius: var(--border-radius);
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  @keyframes wave {
+    60% {
+      transform: translateX(15px) rotate(16deg);
+    }
+  }
 </style>
+
+<GlobalLayout title="Hi I'm Luke">
+  <div class="hero">
+    <div class="stack">
+      <div class="drop-in-animation profile-img-glow"></div>
+      <img
+        alt="Luke"
+        loading="eager"
+        class="drop-in-animation elevated-hover profile-img"
+        src="/imgs/profile.jpg"
+      />
+    </div>
+
+    <div class="flex-1 hero-text">
+      <h1 class="margin-bottom-16">
+        Hi I'm Luke <span aria-hidden="true" class="hand">👋🏻</span>
+      </h1>
+
+      <!-- <blockquote class="badge badge-subtle blockquote margin-16">Passionate. Professional. Programmer.</blockquote> -->
+
+      <p>
+        Let me introduce myself. I've been a professional programmer for over
+        three years, with experience dating back to 2016. I’m currently focused
+        on frontend development, specializing in web projects and some mobile
+        work. I also have a wide range of passions and hobbies, which you can
+        explore further on my <a class="link" href="/about-me">about me</a> page.
+      </p>
+    </div>
+  </div>
+
+  <hr aria-hidden="true" />
+
+  <h2>Education</h2>
+
+  <h3>
+    <span class="flex-1 gap-4 row align-center"
+      ><img alt="" class="brand margin-right-4" src="/brands/uark.svg" /> University
+      of Arkansas</span
+    >
+    <span class="badge">2019 - 2021</span>
+  </h3>
+
+  <div class="list-styled">
+    <ul>
+      <li>Bachelors in computer science</li>
+    </ul>
+  </div>
+
+  <h3>
+    <span class="flex-1 gap-4 row align-center"
+      ><img alt="" class="brand margin-right-4" src="/brands/otc.svg" /> Ozark community
+      college</span
+    >
+    <span class="badge">2016 - 2018</span>
+  </h3>
+
+  <div class="list-styled">
+    <ul>
+      <li>Associates in information technology</li>
+    </ul>
+  </div>
+
+  <h2>Professional work</h2>
+
+  <h3>
+    <span class="flex-1 gap-4 row align-center"
+      ><img alt="" class="brand margin-right-4" src="/brands/visa-equity.svg" />
+      Visa - Design engineer</span
+    >
+    <span class="badge">2022 - now</span>
+  </h3>
+
+  <div class="list-styled">
+    <ul>
+      <li>All previous responsibilities</li>
+      <li>Technical and team lead for React and/or TypeScript projects</li>
+      <li>
+        Design system library
+        <ul>
+          <li>Required maximum flexibility for 2000+ internal dev user base</li>
+          <li>
+            Architect of React library
+            <ul>
+              <li>Achieved 100% test coverage</li>
+              <li>Added strict type safety</li>
+              <li>Reduced build times in half</li>
+              <li>Shrank bundle size by 60%</li>
+            </ul>
+          </li>
+          <li>
+            Architect of icons libraries
+            <ul>
+              <li>Dedicated libraries for Angular, Flutter, HTML, and React</li>
+              <li>
+                Allowed for tree shaking, improved consuming dev experience, and
+                completely type safe
+              </li>
+            </ul>
+          </li>
+          <li>
+            Assisted architecture and development of Angular library
+            <ul>
+              <li>Reduced build times by 15%</li>
+              <li>Reduced bundles size of consuming apps by up to 50%</li>
+              <li>Full migration to standalone components</li>
+            </ul>
+          </li>
+          <li>Fixed hundreds of bugs</li>
+        </ul>
+        <li>Mentored many teammates, elevated skills across the entire team</li>
+        <li>Taught in internal learning sessions</li>
+        <li>
+          Assisted in interviewing and hiring new candidates for development
+        </li>
+      </li>
+    </ul>
+  </div>
+
+  <h3>
+    <span class="flex-1 gap-4 row align-center"
+      ><img alt="" class="brand margin-right-4" src="/brands/visa-equity.svg" />
+      Visa - Associate design engineer</span
+    >
+    <span class="badge">2021 - 2022</span>
+  </h3>
+
+  <div class="list-styled">
+    <ul>
+      <li>Frontend application development</li>
+      <li>
+        Built demos, prototypes, and full applications with Angular, Dart,
+        Flutter, React, and TypeScript
+      </li>
+      <li>Frequent presentations to stakeholders and consumers</li>
+      <li>
+        Frequent communication between stakeholders, designers, accessibility,
+        and fellow developers
+      </li>
+      <li>Strict accessibility requirements across all projects</li>
+    </ul>
+  </div>
+
+  <h2>Service work</h2>
+
+  <h3>
+    <span class="flex-1 gap-4 row align-center"
+      ><img
+        alt=""
+        class="brand margin-right-4"
+        src="/brands/olive-garden.svg"
+      /> Darden restaurants - Server</span
+    >
+    <span class="badge">2019 - 2021</span>
+  </h3>
+
+  <div class="list-styled">
+    <ul>
+      <li>
+        Maintained exceptional standards of customer service and efficient
+        workflow during high-volume, fast-paced, operations
+      </li>
+      <li>
+        Assisted in training new team members on POS systems, effective guest
+        interactions, and efficient workflow strategies
+      </li>
+    </ul>
+  </div>
+
+  <h2>Technologies</h2>
+  <Technologies />
+  <hr aria-hidden="true" />
+  <div class="justify-center gap-16 related-container row wrap">
+    <ContentCard
+      href="/resume"
+      linkLabel="View resume"
+      rawIcon={docLargeIcon}
+      title="Looking for\n something official?"
+    />
+    <ContentCard
+      href={urls.github}
+      linkExternal={true}
+      linkLabel="Open Github"
+      rawIcon={githubIcon}
+      title="Got Github?"
+    />
+  </div>
+</GlobalLayout>
