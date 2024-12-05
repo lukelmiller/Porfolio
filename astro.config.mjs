@@ -4,5 +4,5 @@ import { homepage } from "./package.json";
 
 // https://astro.build/config
 export default defineConfig({
-	site: homepage,
+  site: homepage,
 });

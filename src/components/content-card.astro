@@ -1,87 +1,85 @@
 ---
 type Props = {
-	animateIcon?: boolean;
-	href: string;
-	linkExternal?: boolean;
-	linkLabel: string;
-	rawIcon: string;
-	title: string;
+  animateIcon?: boolean;
+  href: string;
+  linkExternal?: boolean;
+  linkLabel: string;
+  rawIcon: string;
+  title: string;
 };
 
 const {
-	animateIcon = true,
-	href,
-	linkExternal = false,
-	linkLabel,
-	rawIcon,
-	title,
+  animateIcon = true,
+  href,
+  linkExternal = false,
+  linkLabel,
+  rawIcon,
+  title,
 } = Astro.props;
 ---
 
 <style>
-	.doc-icon-container {
-		border-radius: 50%;
-		flex-grow: 1;
-		overflow: hidden;
-		.icon {
-			transform: translateY(8px);
-			max-block-size: 112px;
-			max-inline-size: 112px;
-			margin-inline: auto;
-		}
-	}
-	.resume-card {
-		background-color: var(--surface-secondary);
-		flex-basis: 45%;
-		flex-grow: 1;
-		flex-shrink: 1;
-	}
-	.title {
-		animation: none;
-		border-block-end-width: 0px;
-	}
-	.info-container {
-		flex-grow: 2;
-	}
-	.animate-icon {
-		.doc-icon-container .icon {
-			transform: translateY(25px);
-		}
-	}
-	@media (hover: hover) {
-		.animate-icon {
-			.doc-icon-container .icon {
-				transition: 1s;
-				transform: translateY(35px);
-			}
-			&:hover,
-			&:focus-within {
-				.icon {
-					transform: translateY(15px);
-				}
-			}
-		}
-	}
+  .doc-icon-container {
+    border-radius: 50%;
+    flex-grow: 1;
+    overflow: hidden;
+    .icon {
+      transform: translateY(8px);
+      max-block-size: 112px;
+      max-inline-size: 112px;
+      margin-inline: auto;
+    }
+  }
+  .resume-card {
+    background-color: var(--surface-secondary);
+    flex-basis: 45%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .title {
+    animation: none;
+    border-block-end-width: 0px;
+  }
+  .info-container {
+    flex-grow: 2;
+  }
+  .animate-icon {
+    .doc-icon-container .icon {
+      transform: translateY(25px);
+    }
+  }
+  @media (hover: hover) {
+    .animate-icon {
+      .doc-icon-container .icon {
+        transition: 1s;
+        transform: translateY(35px);
+      }
+      &:hover,
+      &:focus-within {
+        .icon {
+          transform: translateY(15px);
+        }
+      }
+    }
+  }
 </style>
 <div
-	class:list={{
-		"align-center card gap-16 justify-evenly padding-16 row resume-card wrap": true,
-		"animate-icon": animateIcon,
-	}}
+  class:list={{
+    "align-center card gap-16 justify-evenly padding-16 row resume-card wrap": true,
+    "animate-icon": animateIcon,
+  }}
 >
-	<div class="doc-icon-container">
-		<Fragment set:html={rawIcon} />
-	</div>
-	<div class="info-container col justify-between">
-		<h2 class="title">{title}</h2>
-		<a
-			aria-label={linkExternal
-				? `${linkLabel} (opens in new tab)`
-				: undefined}
-			class="button button-subtle elevated-hover"
-			href={href}
-			rel={linkExternal ? "noopener noreferrer" : undefined}
-			target={linkExternal ? "_blank" : undefined}>{linkLabel}</a
-		>
-	</div>
+  <div class="doc-icon-container">
+    <Fragment set:html={rawIcon} />
+  </div>
+  <div class="info-container col justify-between">
+    <h2 class="title">{title}</h2>
+    <a
+      aria-label={linkExternal ? `${linkLabel} (opens in new tab)` : undefined}
+      class="button button-subtle elevated-hover"
+      href={href}
+      rel={linkExternal ? "noopener noreferrer" : undefined}
+      target={linkExternal ? "_blank" : undefined}>{linkLabel}</a
+    >
+  </div>
 </div>

@@ -1,22 +1,22 @@
 :root {
-	--action-surface-primary: #8cf0ce;
-	--focus: #fef980;
-	--highlight: light-dark(rgb(255, 223, 163), rgb(196, 134, 18));
-	--hero-gradient: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 0) 0%,
-		rgba(149, 230, 244, 1) 80%,
-		rgba(240, 254, 19, 1) 85%,
-		rgba(149, 230, 244, 1) 90%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	--icon-fill: var(--text);
-	--link: var(--primary);
-	--primary: light-dark(#95e6f4, #001cd0);
-	--secondary: var(--highlight);
-	--surface-primary: light-dark(white, rgb(24, 24, 24));
-	--surface-secondary: light-dark(#fffff0, #3c3c39);
-	--surface-tertiary: light-dark(#f3acaa, #ff3730);
-	--text: light-dark(black, white);
-	--text-light: light-dark(#555555, #e1e1e1);
+  --action-surface-primary: #8cf0ce;
+  --focus: #fef980;
+  --highlight: light-dark(rgb(255, 223, 163), rgb(196, 134, 18));
+  --hero-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(149, 230, 244, 1) 80%,
+    rgba(240, 254, 19, 1) 85%,
+    rgba(149, 230, 244, 1) 90%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --icon-fill: var(--text);
+  --link: var(--primary);
+  --primary: light-dark(#95e6f4, #001cd0);
+  --secondary: var(--highlight);
+  --surface-primary: light-dark(white, rgb(24, 24, 24));
+  --surface-secondary: light-dark(#fffff0, #3c3c39);
+  --surface-tertiary: light-dark(#f3acaa, #ff3730);
+  --text: light-dark(black, white);
+  --text-light: light-dark(#555555, #e1e1e1);
 }

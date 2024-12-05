@@ -3,41 +3,40 @@ import dropDownIcon from "../assets/icons/drop-down.svg?raw";
 ---
 
 <l-theme-select>
-	<fieldset class="align-center gap-4 justify-center row">
-		<label class="label" for="theme-select">THEME:</label>
-		<div class="button button-subtle elevated-hover select-container">
-			<select class="select" id="theme-select">
-				<option value="auto">Auto</option>
-				<option value="autumn">Autumn</option>
-				<option value="spring">Spring</option>
-				<option value="summer">Summer</option>
-				<option value="winter">Winter</option>
-			</select>
-			<Fragment set:html={dropDownIcon} />
-		</div>
-	</fieldset></l-theme-select
->
+  <fieldset class="align-center gap-4 justify-center row">
+    <label class="label" for="theme-select">THEME:</label>
+    <div class="button button-subtle elevated-hover select-container">
+      <select class="select" id="theme-select">
+        <option value="auto">Auto</option>
+        <option value="autumn">Autumn</option>
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+        <option value="winter">Winter</option>
+      </select>
+      <Fragment set:html={dropDownIcon} />
+    </div>
+  </fieldset>
+</l-theme-select>
 
 <script>
-	import { getRenderedTheme, setPreferences, type Theme } from "../utils";
+  import { getRenderedTheme, setPreferences, type Theme } from "../utils";
 
-	class ThemeSelect extends HTMLElement {
-		connectedCallback() {
-			const styleRoot = document.getElementById("global-theme-root")!;
-			const themeSelect = this.querySelector("select")!;
+  class ThemeSelect extends HTMLElement {
+    connectedCallback() {
+      const styleRoot = document.getElementById("global-theme-root")!;
+      const themeSelect = this.querySelector("select")!;
 
-			themeSelect?.addEventListener("change", (event) => {
-				const theme = (event.target as HTMLSelectElement)
-					.value as Theme;
-				const renderedTheme = getRenderedTheme(theme);
+      themeSelect?.addEventListener("change", (event) => {
+        const theme = (event.target as HTMLSelectElement).value as Theme;
+        const renderedTheme = getRenderedTheme(theme);
 
-				styleRoot.setAttribute("href", `/themes/${renderedTheme}.css`);
+        styleRoot.setAttribute("href", `/themes/${renderedTheme}.css`);
 
-				setPreferences({
-					theme,
-				});
-			});
-		}
-	}
-	customElements.define("l-theme-select", ThemeSelect);
+        setPreferences({
+          theme,
+        });
+      });
+    }
+  }
+  customElements.define("l-theme-select", ThemeSelect);
 </script>

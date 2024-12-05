@@ -3,76 +3,76 @@ import technologies from "../assets/technologies.json";
 import Rating from "./rating.astro";
 
 const technologiesWithImages: ((typeof technologies)[0] & { logo: string })[] =
-	[];
+  [];
 
 for (let i = 0; i < technologies.length; i++) {
-	const tech = technologies[i];
+  const tech = technologies[i];
 
-	const logo = (await import(`../assets/logos/${tech.icon}-themed.svg?raw`))
-		.default;
-	technologiesWithImages[i] = { ...tech, logo };
+  const logo = (await import(`../assets/logos/${tech.icon}-themed.svg?raw`))
+    .default;
+  technologiesWithImages[i] = { ...tech, logo };
 }
 ---
 
 <style>
-	.legend {
-		align-content: center;
-		border: 1px solid var(--text-light);
-		border-radius: var(--border-radius);
-		font-size: 0.65rem;
-		inline-size: fit-content;
-		margin-block: 2rem;
-		margin-inline: auto;
-		padding-block: 0.5rem;
-		padding-inline: 0.75rem;
-	}
+  .legend {
+    align-content: center;
+    border: 1px solid var(--text-light);
+    border-radius: var(--border-radius);
+    font-size: 0.65rem;
+    inline-size: fit-content;
+    margin-block: 2rem;
+    margin-inline: auto;
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+  }
 
-	.logo {
-		block-size: 1.5rem;
-		inline-size: 1.5rem;
-	}
+  .logo {
+    block-size: 1.5rem;
+    inline-size: 1.5rem;
+  }
 
-	.technologies {
-		margin-block-start: 1.5rem;
-	}
+  .technologies {
+    margin-block-start: 1.5rem;
+  }
 </style>
 
 <ul class="gap-16 justify-evenly list-styleless row technologies wrap">
-	{
-		technologiesWithImages.map((tech) => {
-			return (
-				<li class="align-center card elevated-hover gap-8 justify-center list-styleless padding-12 row">
-					<div class="logo margin-4">
-						<Fragment set:html={tech.logo} />
-					</div>
-					<div class="col gap-4">
-						{tech.name}
+  {
+    technologiesWithImages.map((tech) => {
+      return (
+        <li class="align-center card elevated-hover gap-8 justify-center list-styleless padding-12 row">
+          <div class="logo margin-4">
+            <Fragment set:html={tech.logo} />
+          </div>
+          <div class="col gap-4">
+            {tech.name}
 
-						<Rating rating={tech.experience} />
-					</div>
-				</li>
-			);
-		})
-	}
+            <Rating rating={tech.experience} />
+          </div>
+        </li>
+      );
+    })
+  }
 </ul>
 
 <dl class="justify-center legend row wrap gap-12">
-	<div class="row gap-4">
-		<dt>
-			<Rating rating={3} />
-		</dt>
-		<dd>Most experience</dd>
-	</div>
-	<div class="row gap-4">
-		<dt>
-			<Rating rating={2} />
-		</dt>
-		<dd>Good experience</dd>
-	</div>
-	<div class="row gap-4">
-		<dt>
-			<Rating rating={1} />
-		</dt>
-		<dd>Some/Not recent experience</dd>
-	</div>
+  <div class="row gap-4">
+    <dt>
+      <Rating rating={3} />
+    </dt>
+    <dd>Most experience</dd>
+  </div>
+  <div class="row gap-4">
+    <dt>
+      <Rating rating={2} />
+    </dt>
+    <dd>Good experience</dd>
+  </div>
+  <div class="row gap-4">
+    <dt>
+      <Rating rating={1} />
+    </dt>
+    <dd>Some/Not recent experience</dd>
+  </div>
 </dl>

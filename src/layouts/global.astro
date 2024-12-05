@@ -8,146 +8,146 @@ import "../global.css";
 const isHome = !new URL(Astro.request.url).pathname.includes("about-me");
 
 type Props = {
-	frontmatter?: Record<string, unknown>;
-	headerOnly?: boolean;
-	noMargin?: boolean;
-	title?: string;
+  frontmatter?: Record<string, unknown>;
+  headerOnly?: boolean;
+  noMargin?: boolean;
+  title?: string;
 };
 
 const {
-	frontmatter,
-	headerOnly = false,
-	noMargin = false,
-	title,
+  frontmatter,
+  headerOnly = false,
+  noMargin = false,
+  title,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title || frontmatter?.title}</title>
-		<link id="global-theme-root" rel="stylesheet" />
-		<link
-			href="/appearances/auto.css"
-			id="global-appearance-root"
-			rel="stylesheet"
-		/>
-		<script>
-			import { initializeTheme } from "../utils";
-			initializeTheme();
-		</script>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || frontmatter?.title}</title>
+    <link id="global-theme-root" rel="stylesheet" />
+    <link
+      href="/appearances/auto.css"
+      id="global-appearance-root"
+      rel="stylesheet"
+    />
+    <script>
+      import { initializeTheme } from "../utils";
+      initializeTheme();
+    </script>
+  </head>
 
-	<body class:list={{ "page-margin": !noMargin }}>
-		<div class="flex justify-center margin-16 skip-to-main">
-			<a class="link" href="#main"> Skip to content </a>
-		</div>
-		<header
-			class:list={{
-				"header align-center flex gap-16 justify-between wrap": true,
-				"page-margin": noMargin,
-			}}
-		>
-			<nav>
-				<ul class="align-center gap-16 row">
-					<li>
-						<a
-							aria-current={isHome ? "page" : undefined}
-							aria-label="Home"
-							class="elevated-hover logo-link link nav-link"
-							href="/"
-							title="Home"
-						>
-							<Fragment set:html={logo} />
-						</a>
-					</li>
-					<li>
-						<a
-							aria-current={!isHome ? "page" : undefined}
-							aria-label="About me"
-							class="link nav-link"
-							href="/about-me">About me</a
-						>
-					</li>
-				</ul>
-			</nav>
-			<div class="align-center flex gap-8 justify-center wrap-reverse">
-				<ThemeSelector />
-				<AppearanceToggle />
-			</div>
-		</header>
+  <body class:list={{ "page-margin": !noMargin }}>
+    <div class="flex justify-center margin-16 skip-to-main">
+      <a class="link" href="#main"> Skip to content </a>
+    </div>
+    <header
+      class:list={{
+        "header align-center flex gap-16 justify-between wrap": true,
+        "page-margin": noMargin,
+      }}
+    >
+      <nav>
+        <ul class="align-center gap-16 row">
+          <li>
+            <a
+              aria-current={isHome ? "page" : undefined}
+              aria-label="Home"
+              class="elevated-hover logo-link link nav-link"
+              href="/"
+              title="Home"
+            >
+              <Fragment set:html={logo} />
+            </a>
+          </li>
+          <li>
+            <a
+              aria-current={!isHome ? "page" : undefined}
+              aria-label="About me"
+              class="link nav-link"
+              href="/about-me">About me</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="align-center flex gap-8 justify-center wrap-reverse">
+        <ThemeSelector />
+        <AppearanceToggle />
+      </div>
+    </header>
 
-		<main id="main">
-			<div class:list={{ content: !headerOnly }}>
-				<slot />
-			</div>
-			{
-				!headerOnly && (
-					<div class="animation-pause-container flex justify-center margin-32">
-						<PauseAnimationsButton />
-					</div>
-				)
-			}
-		</main>
+    <main id="main">
+      <div class:list={{ content: !headerOnly }}>
+        <slot />
+      </div>
+      {
+        !headerOnly && (
+          <div class="animation-pause-container flex justify-center margin-32">
+            <PauseAnimationsButton />
+          </div>
+        )
+      }
+    </main>
 
-		<footer class="align-center gap-16 justify-center label margin-16 row">
-			<span>©{new Date().getFullYear()}</span>
-		</footer>
-	</body>
+    <footer class="align-center gap-16 justify-center label margin-16 row">
+      <span>©{new Date().getFullYear()}</span>
+    </footer>
+  </body>
 </html>
 
 <style is:global>
-	.content {
-		margin-block: 48px;
-	}
+  .content {
+    margin-block: 48px;
+  }
 
-	.logo-link {
-		display: block;
-		border-radius: 50%;
-	}
+  .logo-link {
+    display: block;
+    border-radius: 50%;
+  }
 
-	.logo {
-		height: 48px;
-		width: 48px;
-	}
+  .logo {
+    height: 48px;
+    width: 48px;
+  }
 
-	#main {
-		height: 100%;
-	}
+  #main {
+    height: 100%;
+  }
 
-	.page-margin {
-		padding-block: 2%;
-		margin-inline: 20%;
-	}
+  .page-margin {
+    padding-block: 2%;
+    margin-inline: 20%;
+  }
 
-	.skip-to-main {
-		position: absolute;
-		top: -1000%;
-		right: -1000%;
+  .skip-to-main {
+    position: absolute;
+    top: -1000%;
+    right: -1000%;
 
-		&:focus-within {
-			position: inherit;
-			height: inherit;
-			width: inherit;
-			top: inherit;
-			right: inherit;
-		}
-	}
+    &:focus-within {
+      position: inherit;
+      height: inherit;
+      width: inherit;
+      top: inherit;
+      right: inherit;
+    }
+  }
 
-	@media only screen and (max-width: 700px) {
-		.page-margin {
-			margin-inline: 8%;
-		}
-	}
-	@media only screen and (max-width: 400px) {
-		.header {
-			margin-block-start: 8px;
-			justify-content: center;
-		}
-	}
+  @media only screen and (max-width: 700px) {
+    .page-margin {
+      margin-inline: 8%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .header {
+      margin-block-start: 8px;
+      justify-content: center;
+    }
+  }
 </style>

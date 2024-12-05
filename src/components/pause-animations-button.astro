@@ -2,39 +2,39 @@
 
 ---
 
-<l-button
-	><button class="button button-subtle elevated-hover label"
-		>Pause animations</button
-	></l-button
->
+<l-button>
+  <button class="button button-subtle elevated-hover label">
+    Pause animations
+  </button>
+</l-button>
 
 <script>
-	import pauseIcon from "../assets/icons/pause.svg?raw";
-	import playIcon from "../assets/icons/play.svg?raw";
+  import pauseIcon from "../assets/icons/pause.svg?raw";
+  import playIcon from "../assets/icons/play.svg?raw";
 
-	const pauseContent = `${pauseIcon} Pause animations`;
-	const playContent = `${playIcon} Play animations`;
+  const pauseContent = `${pauseIcon} Pause animations`;
+  const playContent = `${playIcon} Play animations`;
 
-	class Button extends HTMLElement {
-		connectedCallback() {
-			const body = document.querySelector("body")!;
-			const button = this.querySelector("button")!;
+  class Button extends HTMLElement {
+    connectedCallback() {
+      const body = document.querySelector("body")!;
+      const button = this.querySelector("button")!;
 
-			let isPaused = false;
+      let isPaused = false;
 
-			if (isPaused) body.classList.add("pause-all-animations");
+      if (isPaused) body.classList.add("pause-all-animations");
 
-			button.innerHTML = isPaused ? playContent : pauseContent;
+      button.innerHTML = isPaused ? playContent : pauseContent;
 
-			button?.addEventListener("click", () => {
-				isPaused = !isPaused;
+      button?.addEventListener("click", () => {
+        isPaused = !isPaused;
 
-				button.innerHTML = isPaused ? playContent : pauseContent;
+        button.innerHTML = isPaused ? playContent : pauseContent;
 
-				body.classList.toggle("pause-all-animations");
-			});
-		}
-	}
+        body.classList.toggle("pause-all-animations");
+      });
+    }
+  }
 
-	customElements.define("l-button", Button);
+  customElements.define("l-button", Button);
 </script>
